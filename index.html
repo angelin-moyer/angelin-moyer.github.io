@@ -1,285 +1,738 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <title>Angelin Moyer | Data, AI & Analytics</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 
+
 <body>
 
-  <nav>
-    <div class="logo">AM</div>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#experience">Experience</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+<!-- NAVIGATION -->
+
+<nav>
+
+  <a class="logo" href="#home">AM</a>
+
+  <div class="nav-links">
+
+    <a href="#about">About</a>
+
+    <a href="#experience">Experience</a>
+
+    <a href="#projects">Projects</a>
+
+    <a href="#skills">Skills</a>
+
+    <a href="#contact">Contact</a>
+
+  </div>
+
+</nav>
+
+
+
+<main>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+  <div class="hero-copy">
+
+    <p class="eyebrow">
+      DATA • AI • ANALYTICS
+    </p>
+
+    <h1>
+      Hi, I'm Angelin.
+    </h1>
+
+    <p class="hero-tagline">
+      I turn messy data into useful insights,
+      products & AI experiences.
+    </p>
+
+    <p class="hero-description">
+      Information Science graduate working across
+      data analytics, machine learning, AI systems,
+      visualization and software development.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a
+        href="#projects"
+        class="button primary"
+      >
+        Explore My Work
+      </a>
+
+      <a
+        href="resume.pdf"
+        class="button secondary"
+        target="_blank"
+      >
+        View Resume
+      </a>
+
     </div>
-  </nav>
 
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <p class="eyebrow">DATA • AI • ANALYTICS</p>
-
-      <h1>Hi, I'm Angelin Moyer.</h1>
-
-      <p class="hero-description">
-        Information Science graduate building data-driven and AI-powered
-        solutions using Python, SQL, machine learning, data visualization,
-        and modern AI technologies.
-      </p>
-
-      <div class="hero-buttons">
-        <a class="button primary" href="#projects">View My Work</a>
-
-        <a
-          class="button secondary"
-          href="resume.pdf"
-          target="_blank"
-        >
-          View Resume
-        </a>
-      </div>
-    </section>
+  </div>
 
 
-    <!-- ABOUT -->
-    <section id="about">
-      <p class="section-label">ABOUT</p>
-      <h2>Turning data into useful products and insights.</h2>
+  <div class="hero-decoration">
 
-      <p class="section-intro">
-        I earned my B.S. in Information Science from the University of
-        Colorado Boulder with a minor in Business Administration. My work
-        combines data analysis, artificial intelligence, software development,
-        and human-centered problem solving.
-      </p>
+    <div class="floating-card card-one">
+      Python
+    </div>
 
-      <p class="section-intro">
-        I'm especially interested in data science, analytics, AI engineering,
-        and building systems that turn complex information into practical
-        solutions.
-      </p>
-    </section>
+    <div class="floating-card card-two">
+      SQL
+    </div>
 
+    <div class="floating-card card-three">
+      AI
+    </div>
 
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="section-label">EXPERIENCE</p>
-      <h2>Where I've worked.</h2>
+    <div class="floating-card card-four">
+      Data
+    </div>
 
-      <div class="experience-item">
-        <div>
-          <h3>AI Product & Strategy Fellow</h3>
-          <p class="company">Call for Code AI</p>
-        </div>
+  </div>
 
-        <p class="date">Mar 2026 – Jul 2026</p>
-
-        <p>
-          Collaborated with technical, product, and partner stakeholders
-          on AI-driven initiatives, translating operational challenges into
-          technical solution plans and supporting scalable program delivery.
-        </p>
-      </div>
-
-      <div class="experience-item">
-        <div>
-          <h3>Team Lead</h3>
-          <p class="company">OZO Coffee</p>
-        </div>
-
-        <p class="date">Aug 2023 – Jul 2026</p>
-
-        <p>
-          Led daily operations in a high-volume environment, trained team
-          members, solved workflow challenges, and identified opportunities
-          to improve team efficiency and customer experience.
-        </p>
-      </div>
-    </section>
+</section>
 
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="section-label">FEATURED PROJECTS</p>
-      <h2>Things I've built and analyzed.</h2>
 
-      <div class="project-grid">
+<!-- ABOUT -->
 
-        <article class="project-card">
-          <p class="project-number">01</p>
+<section id="about">
 
-          <h3>Search Quality Evaluation</h3>
+  <p class="section-label">
+    ABOUT ME
+  </p>
 
-          <p>
-            Built an end-to-end RAG and semantic retrieval pipeline using
-            document ingestion, embeddings, vector search, similarity scoring,
-            and source-grounded retrieval.
-          </p>
+  <h2>
+    Data, technology and people.
+  </h2>
 
-          <div class="tags">
-            <span>Python</span>
-            <span>MongoDB</span>
-            <span>RAG</span>
-            <span>SentenceTransformers</span>
-          </div>
+  <div class="about-grid">
 
-          <p class="metric">
-            Evaluation framework: 100–200 Q/A pairs
-          </p>
-        </article>
+    <p class="large-copy">
+      I studied Information Science at the
+      University of Colorado Boulder with a
+      minor in Business Administration.
+    </p>
 
-
-        <article class="project-card">
-          <p class="project-number">02</p>
-
-          <h3>LLM Evaluation Harness</h3>
-
-          <p>
-            Developed a reusable testing framework for comparing multiple
-            large language models using standardized prompts, automated
-            scoring, performance metrics, and dashboard reporting.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>LLMs</span>
-            <span>Power BI</span>
-            <span>Ollama</span>
-          </div>
-
-          <p class="metric">
-            Tracked pass rate, hallucination rate, refusal accuracy and consistency
-          </p>
-        </article>
-
-
-        <article class="project-card">
-          <p class="project-number">03</p>
-
-          <h3>BalanceBasket</h3>
-
-          <p>
-            Built an AI-powered grocery optimization platform with pantry
-            tracking, product search, personalized recommendations and
-            budget-aware grocery planning.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>FastAPI</span>
-            <span>SQL</span>
-            <span>REST APIs</span>
-          </div>
-        </article>
-
-
-        <article class="project-card">
-          <p class="project-number">04</p>
-
-          <h3>Coffee Pricing & Cost of Living</h3>
-
-          <p>
-            Analyzed coffee prices across the United States by combining
-            pricing and cost-of-living datasets and creating interactive
-            visualizations to identify regional trends.
-          </p>
-
-          <div class="tags">
-            <span>Python</span>
-            <span>SQL</span>
-            <span>Tableau</span>
-            <span>Power BI</span>
-          </div>
-
-          <p class="metric">
-            150+ observations across 50 states
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <p class="section-label">TECHNICAL SKILLS</p>
-      <h2>What I work with.</h2>
-
-      <div class="skills-grid">
-
-        <div>
-          <h3>Languages</h3>
-          <p>Python, SQL, TypeScript, JavaScript</p>
-        </div>
-
-        <div>
-          <h3>Frameworks</h3>
-          <p>
-            Pandas, NumPy, Scikit-learn, FastAPI,
-            React, SentenceTransformers
-          </p>
-        </div>
-
-        <div>
-          <h3>Tools</h3>
-          <p>
-            Tableau, Power BI, MongoDB, PostgreSQL,
-            BigQuery, Git/GitHub, Jupyter
-          </p>
-        </div>
-
-        <div>
-          <h3>Data & AI</h3>
-          <p>
-            Machine Learning, Data Analysis, ETL, RAG,
-            Embeddings, Vector Search, LLM Evaluation
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-      <p class="section-label">LET'S CONNECT</p>
-
-      <h2>Interested in working together?</h2>
+    <div>
 
       <p>
-        I'm currently interested in opportunities across data science,
-        analytics, AI and data engineering.
+        My work sits at the intersection of data,
+        artificial intelligence, software and
+        human-centered problem solving.
       </p>
 
-      <div class="contact-links">
+      <p>
+        I'm especially interested in using Python,
+        SQL, machine learning and visualization to
+        uncover patterns and build tools that make
+        information easier to understand and use.
+      </p>
 
-        <a href="mailto:angiemoyer14@gmail.com">
-          Email Me
-        </a>
+    </div>
 
-        <a
-          href="https://www.linkedin.com/in/angelin-moyer"
-          target="_blank"
+  </div>
+
+</section>
+
+
+
+<!-- EXPERIENCE -->
+
+<section id="experience">
+
+  <p class="section-label">
+    EXPERIENCE
+  </p>
+
+  <h2>
+    Where I've worked.
+  </h2>
+
+
+  <div class="experience-item">
+
+    <div>
+
+      <h3>
+        AI Product & Strategy Fellow
+      </h3>
+
+      <p class="company">
+        Call for Code AI
+      </p>
+
+    </div>
+
+    <p class="date">
+      Mar 2026 – Jul 2026
+    </p>
+
+    <p class="experience-description">
+      Collaborated with technical, product and
+      partner stakeholders on AI-driven initiatives,
+      translating complex operational challenges
+      into actionable technical solution plans and
+      supporting scalable program delivery.
+    </p>
+
+  </div>
+
+
+  <div class="experience-item">
+
+    <div>
+
+      <h3>
+        Team Lead
+      </h3>
+
+      <p class="company">
+        OZO Coffee
+      </p>
+
+    </div>
+
+    <p class="date">
+      Aug 2023 – Jul 2026
+    </p>
+
+    <p class="experience-description">
+      Led daily operations in a high-volume
+      environment, trained team members, solved
+      workflow challenges and identified
+      opportunities to improve team efficiency
+      and customer experience.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+  <p class="section-label">
+    FEATURED PROJECTS
+  </p>
+
+  <h2>
+    Things I've built & analyzed.
+  </h2>
+
+  <p class="projects-intro">
+    Explore my work across data analysis,
+    visualization, machine learning,
+    generative AI and product development.
+  </p>
+
+
+
+  <div class="project-grid">
+
+
+    <!-- SMOKING PROJECT -->
+
+    <a
+      class="project-card smoking-card"
+      href="projects/smoking.html"
+    >
+
+      <div class="project-image">
+
+        <img
+          src="images/smoking.png"
+          alt="Smoking prevalence data project"
         >
-          LinkedIn
-        </a>
 
       </div>
-    </section>
 
-  </main>
+      <div class="project-content">
 
-  <footer>
-    <p>© 2026 Angelin Moyer</p>
-  </footer>
+        <p class="project-number">
+          01 · DATA ANALYTICS
+        </p>
+
+        <h3>
+          Inequality in Smoking Prevalence
+        </h3>
+
+        <p>
+          Explored geographic and demographic
+          differences in smoking prevalence using
+          multiple public datasets and interactive
+          data visualization.
+        </p>
+
+        <div class="tags">
+
+          <span>Python</span>
+          <span>Pandas</span>
+          <span>SQL</span>
+          <span>Power BI</span>
+
+        </div>
+
+        <p class="view-project">
+          View Project →
+        </p>
+
+      </div>
+
+    </a>
+
+
+
+
+    <!-- BALANCEBASKET -->
+
+    <a
+      class="project-card balance-card"
+      href="projects/balancebasket.html"
+    >
+
+      <div class="project-image">
+
+        <img
+          src="images/balancebasket.jpg"
+          alt="BalanceBasket AI grocery optimization project"
+        >
+
+      </div>
+
+      <div class="project-content">
+
+        <p class="project-number">
+          02 · AI PRODUCT
+        </p>
+
+        <h3>
+          BalanceBasket
+        </h3>
+
+        <p>
+          Built an AI-powered grocery optimization
+          platform with pantry tracking,
+          personalized recommendations,
+          product search and budget-aware planning.
+        </p>
+
+        <div class="tags">
+
+          <span>Python</span>
+          <span>FastAPI</span>
+          <span>SQL</span>
+          <span>REST APIs</span>
+
+        </div>
+
+        <p class="view-project">
+          View Project →
+        </p>
+
+      </div>
+
+    </a>
+
+
+
+
+    <!-- OLLAMA / RAG -->
+
+    <a
+      class="project-card ollama-card"
+      href="projects/ollama.html"
+    >
+
+      <div class="project-image">
+
+        <img
+          src="images/ollama.png"
+          alt="Ollama semantic search and RAG project"
+        >
+
+      </div>
+
+      <div class="project-content">
+
+        <p class="project-number">
+          03 · GENERATIVE AI
+        </p>
+
+        <h3>
+          Search Quality Evaluation
+        </h3>
+
+        <p>
+          Built an end-to-end semantic retrieval
+          system using embeddings, vector search,
+          similarity scoring and source-grounded
+          generation.
+        </p>
+
+        <div class="tags">
+
+          <span>Python</span>
+          <span>MongoDB</span>
+          <span>Ollama</span>
+          <span>RAG</span>
+
+        </div>
+
+        <p class="project-metric">
+          Evaluation plan: 100–200 Q/A pairs
+        </p>
+
+        <p class="view-project">
+          View Project →
+        </p>
+
+      </div>
+
+    </a>
+
+
+
+
+    <!-- LLM EVALUATION -->
+
+    <a
+      class="project-card llm-card"
+      href="projects/llm-evaluation.html"
+    >
+
+      <div class="project-image">
+
+        <img
+          src="images/llm-eval.png"
+          alt="LLM evaluation framework project"
+        >
+
+      </div>
+
+      <div class="project-content">
+
+        <p class="project-number">
+          04 · AI EVALUATION
+        </p>
+
+        <h3>
+          LLM Evaluation Harness
+        </h3>
+
+        <p>
+          Developed a reusable framework for
+          comparing large language models using
+          standardized prompts, automated scoring,
+          experimentation and dashboard reporting.
+        </p>
+
+        <div class="tags">
+
+          <span>Python</span>
+          <span>Ollama</span>
+          <span>Power BI</span>
+          <span>LLMs</span>
+
+        </div>
+
+        <p class="project-metric">
+          Evaluated 4 model-quality KPIs
+        </p>
+
+        <p class="view-project">
+          View Project →
+        </p>
+
+      </div>
+
+    </a>
+
+
+
+
+    <!-- COFFEE -->
+
+    <a
+      class="project-card coffee-card"
+      href="projects/coffee.html"
+    >
+
+      <div class="project-image">
+
+        <img
+          src="images/coffee.png"
+          alt="Coffee pricing and cost of living data analysis"
+        >
+
+      </div>
+
+      <div class="project-content">
+
+        <p class="project-number">
+          05 · DATA VISUALIZATION
+        </p>
+
+        <h3>
+          Coffee Pricing & Cost of Living
+        </h3>
+
+        <p>
+          Analyzed coffee prices across the United
+          States by combining pricing and
+          cost-of-living datasets to investigate
+          regional affordability patterns.
+        </p>
+
+        <div class="tags">
+
+          <span>Python</span>
+          <span>SQL</span>
+          <span>Tableau</span>
+          <span>Power BI</span>
+
+        </div>
+
+        <p class="project-metric">
+          150+ observations · 50 states
+        </p>
+
+        <p class="view-project">
+          View Project →
+        </p>
+
+      </div>
+
+    </a>
+
+
+
+
+    <!-- FUTURE PROJECT -->
+
+    <div class="project-card coming-soon">
+
+      <div class="coming-image">
+
+        <span>
+          +
+        </span>
+
+      </div>
+
+      <div class="project-content">
+
+        <p class="project-number">
+          06 · COMING SOON
+        </p>
+
+        <h3>
+          Next Project
+        </h3>
+
+        <p>
+          A new data science project is currently
+          in development.
+        </p>
+
+        <div class="tags">
+
+          <span>Coming Soon</span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+  <p class="section-label">
+    TECHNICAL TOOLKIT
+  </p>
+
+  <h2>
+    What I work with.
+  </h2>
+
+
+  <div class="skills-grid">
+
+
+    <div class="skill-card">
+
+      <p class="skill-icon">
+        &lt;/&gt;
+      </p>
+
+      <h3>
+        Languages
+      </h3>
+
+      <p>
+        Python, SQL,
+        TypeScript, JavaScript
+      </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+      <p class="skill-icon">
+        { }
+      </p>
+
+      <h3>
+        Frameworks
+      </h3>
+
+      <p>
+        Pandas, NumPy, Scikit-learn,
+        FastAPI, React,
+        SentenceTransformers
+      </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+      <p class="skill-icon">
+        ◉
+      </p>
+
+      <h3>
+        Tools
+      </h3>
+
+      <p>
+        Tableau, Power BI, MongoDB,
+        PostgreSQL, BigQuery,
+        Git/GitHub, Jupyter
+      </p>
+
+    </div>
+
+
+    <div class="skill-card">
+
+      <p class="skill-icon">
+        ✦
+      </p>
+
+      <h3>
+        Data & AI
+      </h3>
+
+      <p>
+        Machine Learning, Data Analysis,
+        ETL, RAG, Embeddings,
+        Vector Search, LLM Evaluation
+      </p>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="contact">
+
+  <p class="section-label">
+    LET'S CONNECT
+  </p>
+
+  <h2>
+    Let's build something useful.
+  </h2>
+
+  <p>
+    I'm interested in opportunities across
+    data science, analytics,
+    AI and data engineering.
+  </p>
+
+
+  <div class="contact-links">
+
+    <a
+      href="mailto:angiemoyer14@gmail.com"
+    >
+      Email Me
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/angelin-moyer"
+      target="_blank"
+    >
+      LinkedIn
+    </a>
+
+    <a
+      href="YOUR-GITHUB-URL"
+      target="_blank"
+    >
+      GitHub
+    </a>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <p>
+    Designed & built by Angelin Moyer · 2026
+  </p>
+
+</footer>
+
 
 </body>
+
 </html>
