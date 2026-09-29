@@ -414,3 +414,142 @@ footer {
   .project-image,
   .coming-image { height: 220px; }
 }
+
+
+/* PROJECT DETAIL PAGES — matches the main portfolio design */
+.project-page body {
+  background:
+    radial-gradient(circle at 10% 5%, rgba(247, 198, 181, .28), transparent 26%),
+    radial-gradient(circle at 90% 20%, rgba(221, 214, 245, .28), transparent 25%),
+    var(--cream);
+}
+
+.project-page main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 36px 80px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 30px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.back-link:hover { color: var(--coral); }
+
+.project-hero {
+  padding: 64px 0;
+}
+
+.project-hero h1 {
+  font-size: clamp(46px, 7vw, 76px);
+  line-height: 1.06;
+  letter-spacing: -3px;
+  margin: 12px 0 22px;
+}
+
+.project-summary {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 19px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.project-meta span {
+  background: rgba(255,255,255,.72);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 6px 11px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+}
+
+.detail-block h2 {
+  font-size: 28px;
+  letter-spacing: -.7px;
+  margin-bottom: 14px;
+}
+
+.detail-block p,
+.detail-block li {
+  color: var(--muted);
+}
+
+.detail-block ul {
+  padding-left: 20px;
+}
+
+.detail-block li {
+  margin-bottom: 9px;
+}
+
+.metric-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255,255,255,.55);
+}
+
+.metric {
+  padding: 26px;
+  border-right: 1px solid var(--border);
+}
+
+.metric:last-child { border-right: none; }
+
+.metric strong {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.metric span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+  .project-page main {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .detail-grid,
+  .metric-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .metric:last-child {
+    border-bottom: none;
+  }
+}
