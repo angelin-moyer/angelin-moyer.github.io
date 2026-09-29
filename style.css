@@ -1056,3 +1056,8 @@ footer {
   color:
     var(--text);
 }
+
+.hero h1 {
+  line-height: 1.08;
+  padding-bottom: 10px;
+}
