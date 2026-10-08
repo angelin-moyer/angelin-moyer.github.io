@@ -1,231 +1,47 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Angelin Moyer — data analyst portfolio featuring analytics, visualization, AI, and data projects.">
-  <title>Angelin Moyer | Data Analyst Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Angelin Moyer — data analytics, coding, and applied AI. Selected work and experience.">
+<title>Angelin Moyer — Data Analytics · Coding · AI</title>
+<link rel="stylesheet" href="editorial.css">
 </head>
 <body>
-  <nav class="site-nav">
-    <a class="logo" href="#home" aria-label="Back to top">AM</a>
-    <div class="nav-links">
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">DATA ANALYTICS • PROGRAMMING • AI</p>
-        <h1>Hi, I'm Angelin.</h1>
-        <p class="hero-description">
-          Information Science graduate specializing in data analysis, visualization, and
-          AI-enabled workflows using Python, SQL, Tableau, and Power BI.
-        </p>
-        <div class="hero-buttons">
-          <a class="button primary" href="#projects">Explore My Projects</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/angelin-moyer" target="_blank" rel="noreferrer">LinkedIn</a>
-        </div>
-      </div>
-
-      <div class="hero-decoration" aria-hidden="true">
-        <div class="floating-card card-one">Python</div>
-        <div class="floating-card card-two">SQL</div>
-        <div class="floating-card card-three">Tableau</div>
-        <div class="floating-card card-four">AI</div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <p class="section-label">FEATURED PROJECTS</p>
-      <div class="section-heading-row">
-        <h2>Selected work.</h2>
-        <p class="projects-intro">
-          Projects in data analysis, visualization, and applied AI.
-        </p>
-      </div>
-
-      <div class="project-grid">
-        <a class="project-card smoking-card" href="projects/smoking.html">
-          <div class="project-image">
-            <img src="images/smoking.jpg" alt="Smoking prevalence project cover">
-          </div>
-          <div class="project-content">
-            <p class="project-number">01 · DATA ANALYTICS</p>
-            <h3>Inequality in Smoking Prevalence</h3>
-            <p>
-              Analyzed geographic and demographic differences in smoking prevalence by cleaning,
-              combining, and visualizing public health datasets.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>Pandas</span><span>SQL</span><span>Power BI</span>
-            </div>
-            <p class="project-note">3+ datasets · interactive analysis</p>
-            <p class="view-project">View Project →</p>
-          </div>
-        </a>
-
-        <a class="project-card coffee-card" href="projects/coffee.html">
-          <div class="project-image">
-            <img src="images/coffee.jpg" alt="Coffee pricing analysis project cover">
-          </div>
-          <div class="project-content">
-            <p class="project-number">02 · DATA VISUALIZATION</p>
-            <h3>Coffee Pricing & Cost of Living</h3>
-            <p>
-              Combined coffee pricing and cost-of-living data to explore regional affordability
-              patterns and communicate them through interactive visuals.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>SQL</span><span>Tableau</span><span>Power BI</span>
-            </div>
-            <p class="project-note">150+ observations · 50 states</p>
-            <p class="view-project">View Project →</p>
-          </div>
-        </a>
-
-        <a class="project-card balance-card" href="projects/balancebasket.html">
-          <div class="project-image">
-            <img src="images/balancebasket.jpg" alt="BalanceBasket project cover">
-          </div>
-          <div class="project-content">
-            <p class="project-number">03 · DATA + PRODUCT</p>
-            <h3>BalanceBasket</h3>
-            <p>
-              Built an AI-powered grocery planning platform with pantry tracking, personalized
-              recommendations, product search, and budget-aware workflows.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>FastAPI</span><span>SQL</span><span>REST APIs</span>
-            </div>
-            <p class="project-note">Capstone project · backend + AI logic</p>
-            <p class="view-project">View Project →</p>
-          </div>
-        </a>
-
-        <a class="project-card ollama-card" href="projects/ollama.html">
-          <div class="project-image">
-            <img src="images/ollama.jpg" alt="Ollama semantic search project cover">
-          </div>
-          <div class="project-content">
-            <p class="project-number">04 · GENERATIVE AI</p>
-            <h3>Search Quality Evaluation</h3>
-            <p>
-              Built a semantic retrieval workflow using embeddings, vector search, similarity
-              scoring, and source-grounded responses.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>MongoDB</span><span>Ollama</span><span>RAG</span>
-            </div>
-            <p class="project-note">Evaluation plan: 100–200 Q/A pairs</p>
-            <p class="view-project">View Project →</p>
-          </div>
-        </a>
-
-        <a class="project-card llm-card" href="projects/llm-evaluation.html">
-          <div class="project-image">
-            <img src="images/llm-eval.jpg" alt="LLM evaluation project cover">
-          </div>
-          <div class="project-content">
-            <p class="project-number">05 · AI EVALUATION</p>
-            <h3>LLM Evaluation Harness</h3>
-            <p>
-              Created a reusable framework for comparing language models with standardized prompts,
-              automated scoring, experiment tracking, and dashboard reporting.
-            </p>
-            <div class="tags">
-              <span>Python</span><span>Ollama</span><span>Power BI</span><span>LLMs</span>
-            </div>
-            <p class="project-note">4 model-quality KPIs</p>
-            <p class="view-project">View Project →</p>
-          </div>
-        </a>
-
-        <article class="project-card coming-soon">
-          <div class="coming-image"><span>+</span></div>
-          <div class="project-content">
-            <p class="project-number">06 · IN PROGRESS</p>
-            <h3>Next Project</h3>
-            <p>
-              Reserved for my next data-focused portfolio project.
-            </p>
-            <div class="tags"><span>Coming Soon</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="about">
-      <p class="section-label">ABOUT ME</p>
-      <h2>About me.</h2>
-      <div class="about-grid">
-        <p class="large-copy">
-          I'm an Information Science graduate from the University of Colorado Boulder with a
-          minor in Business Administration and a strong interest in data analytics.
-        </p>
-        <div>
-          <p>
-            I enjoy working through the full analytics process: cleaning data, writing SQL,
-            exploring patterns, building visualizations, and communicating what the results mean.
-            My projects have given me hands-on experience with Python, Tableau, Power BI, and
-            database-backed workflows.
-          </p>
-          <p>
-            I'm currently focused on data analyst and business intelligence roles. I also explore
-            machine learning and AI when they support better analysis, search, or decision-making.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <p class="section-label">TECHNICAL TOOLKIT</p>
-      <h2>What I work with.</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <p class="skill-icon">&lt;/&gt;</p>
-          <h3>Languages</h3>
-          <p>Python, SQL, TypeScript, JavaScript</p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-icon">{ }</p>
-          <h3>Libraries & Frameworks</h3>
-          <p>Pandas, NumPy, Scikit-learn, FastAPI, React, SentenceTransformers</p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-icon">◉</p>
-          <h3>Analytics Tools</h3>
-          <p>Tableau, Power BI, BigQuery, Jupyter, Git/GitHub, MongoDB, PostgreSQL</p>
-        </div>
-        <div class="skill-card">
-          <p class="skill-icon">✦</p>
-          <h3>Data & AI</h3>
-          <p>Data Cleaning, ETL, Visualization, Machine Learning, RAG, Embeddings, Vector Search, LLM Evaluation</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <p class="section-label">LET'S CONNECT</p>
-      <h2>Get in touch.</h2>
-      <p>
-        I'm interested in data analyst, business intelligence, and data-focused AI opportunities.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:angiemoyer14@gmail.com">Email Me</a>
-        <a href="https://www.linkedin.com/in/angelin-moyer" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a href="https://github.com/angelin-moyer" target="_blank" rel="noreferrer">GitHub</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>Designed & built by Angelin Moyer · 2026</p>
-  </footer>
-</body>
-</html>
+<div class="site-wrap">
+<header class="topbar"><a class="wordmark" href="#top">angelin moyer<span class="asterisk">✳</span></a><span class="topbar-caption">PORTFOLIO · 2026</span><nav aria-label="Main navigation"><a href="#work">work ↗</a><a href="#path">path ↗</a><a href="#contact">contact ↗</a></nav></header>
+<main id="top">
+<section class="hero section">
+<div class="eyebrow"><span class="live-dot"></span> DATA ANALYTICS / CODING / AI <span class="right-label">01 · INTRO</span></div>
+<div class="hero-title"><h1>I make data<br><em>make sense.</em></h1><div class="hero-star" aria-hidden="true">✳</div></div>
+<div class="hero-lower"><p class="lead">I'm Angelin — an Information Science graduate who likes turning messy data and complicated problems into something people can actually use.</p><div class="hero-facts"><div><span class="micro-label">MY FOCUS</span><p>Analytics, visualization<br>& practical AI</p></div><div><span class="micro-label">BASED IN</span><p>San Diego, CA<br>Colorado roots</p></div><div><span class="micro-label">FIND ME</span><p><a href="https://www.linkedin.com/in/angelin-moyer" target="_blank" rel="noopener">LinkedIn ↗</a><br><a href="https://github.com/angelin-moyer" target="_blank" rel="noopener">GitHub ↗</a></p></div></div></div>
+<a class="scroll-link" href="#approach">SCROLL TO EXPLORE <span>↓</span></a>
+</section>
+<section class="section" id="approach"><div class="section-index">02 · WHAT I DO</div><div class="section-intro"><h2>Three ways<br><em>I work.</em></h2><p>I like the intersection of technical problem-solving and clear communication — working with the data, finding the story, and building something useful from it.</p></div><div class="triad">
+<article><span class="count">01 / ANALYZE</span><h3>Find the signal.</h3><p>Clean, query, and explore datasets to understand patterns, test assumptions, and figure out what the numbers are actually saying.</p><span class="underlabel">SQL · PYTHON · PANDAS</span></article>
+<article><span class="count">02 / COMMUNICATE</span><h3>Make it click.</h3><p>Turn analysis into visuals and explanations that help people make decisions — without making them decode a dashboard first.</p><span class="underlabel">TABLEAU · POWER BI · DATA VIZ</span></article>
+<article><span class="count">03 / BUILD</span><h3>Make it useful.</h3><p>Build with APIs, databases, and AI when they genuinely improve a workflow, not just because they're exciting tools.</p><span class="underlabel">FASTAPI · ML · APPLIED AI</span></article>
+</div></section>
+<section class="section principles" id="thinking"><div class="section-index">03 · HOW I THINK</div><div class="section-intro"><h2>Curiosity is<br><em>the point.</em></h2><p>A few ideas that shape how I approach my work.</p></div><div class="principle-list">
+<div><span>01</span><h3>Ask why before what.</h3><p>A result is more valuable when you understand what produced it.</p></div>
+<div><span>02</span><h3>Make complexity approachable.</h3><p>The best analysis is something someone else can understand and act on.</p></div>
+<div><span>03</span><h3>Build, test, improve.</h3><p>I learn by making things, finding what doesn't work, and trying again.</p></div>
+<div><span>04</span><h3>Useful beats impressive.</h3><p>A simple solution that solves the problem is better than a flashy one that doesn't.</p></div>
+</div></section>
+<section class="section works" id="work"><div class="section-index">04 · SELECTED WORK</div><div class="section-intro"><h2>A few things<br><em>I've made.</em></h2><p>Research, data storytelling, and applied AI — projects where I got to turn an idea into something concrete. Select a project to explore the details.</p></div>
+<div class="work-list">
+<a href="projects/smoking.html" class="work-row"><span class="work-year">2025</span><span class="work-code">ANALYTICS</span><span class="work-name">Inequality in Smoking Prevalence<small>Exploring demographic and geographic disparities through data.</small></span><span class="work-arrow">↗</span></a>
+<a href="projects/balancebasket.html" class="work-row"><span class="work-year">2026</span><span class="work-code">AI + PRODUCT</span><span class="work-name">BalanceBasket<small>AI-assisted grocery planning, backend development, and budgeting.</small></span><span class="work-arrow">↗</span></a>
+<a href="projects/llm-evaluation.html" class="work-row"><span class="work-year">2026</span><span class="work-code">AI EVALUATION</span><span class="work-name">LLM Evaluation Harness<small>Comparing model outputs with structured evaluations.</small></span><span class="work-arrow">↗</span></a>
+<a href="projects/ollama.html" class="work-row"><span class="work-year">2026</span><span class="work-code">GENERATIVE AI</span><span class="work-name">Search Quality Evaluation<small>Semantic search, retrieval, and source-grounded answers.</small></span><span class="work-arrow">↗</span></a>
+</div><div class="project-gallery"><a href="projects/smoking.html"><img src="images/smoking.jpg" alt="Smoking prevalence analysis preview" loading="lazy"><span>01 / DATA STORYTELLING ↗</span></a><a href="projects/balancebasket.html"><img src="images/balancebasket.jpg" alt="BalanceBasket application preview" loading="lazy"><span>02 / AI APPLICATION ↗</span></a><a href="projects/llm-evaluation.html"><img src="images/llm-eval.jpg" alt="LLM evaluation preview" loading="lazy"><span>03 / MODEL EVALUATION ↗</span></a><a href="projects/ollama.html"><img src="images/ollama.jpg" alt="Semantic search project preview" loading="lazy"><span>04 / SEARCH & RETRIEVAL ↗</span></a></div></section>
+<section class="section tools" id="tools"><div class="section-index">05 · TOOLKIT</div><div class="section-intro"><h2>The tools<br><em>behind the work.</em></h2><p>I choose tools based on the problem — from raw data to something people can explore.</p></div><div class="tool-grid"><div><span>01 · ANALYSIS</span><p>Python / Pandas / NumPy / SQL / BigQuery</p></div><div><span>02 · VISUALIZATION</span><p>Tableau / Power BI / Matplotlib / Altair</p></div><div><span>03 · DEVELOPMENT</span><p>FastAPI / REST APIs / SQLite / Git</p></div><div><span>04 · AI & ML</span><p>scikit-learn / NLP / LLM evaluation / Ollama</p></div></div></section>
+<section class="section path" id="path"><div class="section-index">06 · MY PATH</div><div class="section-intro"><h2>Not one<br><em>straight line.</em></h2><p>My experience brings together technical problem-solving, teamwork, and years of working directly with people.</p></div><div class="timeline">
+<div class="time-item"><span>2026</span><div><small>EXPERIENCE</small><h3>AI Strategy Fellow</h3><p>Call for Code AI — worked with technical, product, and partner teams to connect ideas, requirements, and AI solutions.</p></div></div>
+<div class="time-item"><span>2022 — 2026</span><div><small>EDUCATION</small><h3>B.S. Information Science</h3><p>University of Colorado Boulder · Business minor · projects in data visualization, machine learning, analytics, and AI.</p></div></div>
+<div class="time-item"><span>2023 — 2026</span><div><small>LEADERSHIP</small><h3>Team Lead · OZO Coffee</h3><p>Led shifts, trained teammates, solved customer problems, and learned how to communicate clearly under pressure.</p></div></div>
+<div class="time-item"><span>2025</span><div><small>CERTIFICATION</small><h3>Google Advanced Data Analytics</h3><p>Professional Certificate — applied statistics, analytics, and machine learning.</p></div></div>
+</div></section>
+<section class="section contact" id="contact"><div class="section-index">07 · SAY HELLO</div><div class="contact-inner"><span class="micro-label">GOT AN INTERESTING QUESTION OR OPPORTUNITY?</span><h2>Let's make<br><em>something useful.</em></h2><p>I'm exploring opportunities across data analytics, business intelligence, and applied AI. I'd love to connect.</p><div class="contact-links"><a href="mailto:angiemoyer14@gmail.com">EMAIL ME ↗</a><a href="https://www.linkedin.com/in/angelin-moyer" target="_blank" rel="noopener">LINKEDIN ↗</a><a href="https://github.com/angelin-moyer" target="_blank" rel="noopener">GITHUB ↗</a></div></div></section>
+</main><footer><span>© 2026 ANGELIN MOYER</span><span>BUILT WITH CURIOSITY ✳</span><a href="#top">BACK TO TOP ↑</a></footer>
+</div>
+</body></html>
