@@ -1,0 +1,19 @@
+(()=>{
+const form=document.getElementById('chat-form'),input=document.getElementById('chat-question'),log=document.getElementById('chat-log');if(!form||!input||!log)return;
+const facts=[
+{terms:['balancebasket','grocery','pantry','capstone'],reply:"BalanceBasket is an AI-powered grocery planning and budgeting capstone app. Angelin led backend and assistant work using Python, FastAPI, SQLite, SQLAlchemy, and REST APIs. It uses pantry, cart, budget, and dietary context for personalized suggestions.",url:"projects/balancebasket.html"},
+{terms:['call for code','fellow','strategy'],reply:"Angelin was an AI Strategy Fellow at Call for Code AI in 2026. She worked with technical, product, and partner teams to gather requirements and connect AI ideas to practical needs."},
+{terms:['smoking','prevalence','public health'],reply:"Angelin's smoking prevalence analysis explores geographic and demographic differences using public-health datasets and interactive visualizations.",url:"projects/smoking.html"},
+{terms:['llm','harness','model evaluation','evaluate'],reply:"Her LLM Evaluation Harness uses consistent prompts and structured scoring to help compare model performance more reliably.",url:"projects/llm-evaluation.html"},
+{terms:['ollama','semantic','retrieval','rag','search'],reply:"Her search quality project investigates semantic retrieval, embeddings, similarity scoring, and source-grounded answers.",url:"projects/ollama.html"},
+{terms:['skill','technical','python','sql','tableau','tools','power bi','coding'],reply:"Angelin works with Python, SQL, Pandas, NumPy, scikit-learn, Tableau, Power BI, BigQuery, FastAPI, SQLite, and applied NLP/AI tools."},
+{terms:['analy','approach','process','think','principle'],reply:"She starts by questioning what the metric represents, checks data quality, explores patterns, and communicates findings so people can act on them. Clarity and usefulness matter most."},
+{terms:['hire','roles','job','opportunit','career'],reply:"Angelin is interested in data analyst, business intelligence, analytics engineering, and applied AI opportunities. She combines Information Science training with customer-facing team leadership."},
+{terms:['degree','education','college','boulder','school'],reply:"Angelin earned a B.S. in Information Science from the University of Colorado Boulder, with a Business minor, and completed the Google Advanced Data Analytics Professional Certificate."},
+{terms:['ozo','coffee','team lead','leadership','customer'],reply:"At OZO Coffee, Angelin led shifts, trained teammates, solved customer problems, and built strong communication and operational skills."},
+{terms:['contact','email','linkedin','github'],reply:"Email Angelin at angiemoyer14@gmail.com, connect at linkedin.com/in/angelin-moyer, or see her code at github.com/angelin-moyer."}
+];
+function add(value,role,url){const el=document.createElement('div');el.className='chat-bubble '+role;el.textContent=value;if(url){let a=document.createElement('a');a.href=url;a.textContent=' Explore project ↗';el.appendChild(document.createElement('br'));el.appendChild(a)}log.appendChild(el);log.scrollTop=log.scrollHeight}
+function ask(q){q=q.trim().slice(0,250);if(!q)return;add(q,'user');const clean=q.toLowerCase();let best=null,score=0;for(const fact of facts){let matches=fact.terms.filter(t=>clean.includes(t));let n=matches.reduce((a,t)=>a+(t.includes(' ')?3:1),0);if(n>score){score=n;best=fact}}if(best)add(best.reply,'assistant',best.url);else add("I don't have that answer in my portfolio notes yet. Ask about BalanceBasket, Call for Code, technical skills, projects, education, or career interests. For anything more specific, email Angelin directly.",'assistant')}
+form.addEventListener('submit',e=>{e.preventDefault();ask(input.value);input.value='';input.focus()});document.querySelectorAll('[data-q]').forEach(b=>b.addEventListener('click',()=>ask(b.dataset.q)));
+})();
