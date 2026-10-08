@@ -1,0 +1,25 @@
+/* Motion treatment: subtle entrance, staggered lines, hover movement, progress rail */
+:root{--ease-out:cubic-bezier(.22,1,.36,1)}
+body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:var(--reading-progress,0%);background:#6b9675;transition:width .08s linear;pointer-events:none}
+.site-wrap{overflow:clip}
+.hero .eyebrow{animation:rise-in .7s var(--ease-out) both}
+.hero h1{animation:rise-in 1s .08s var(--ease-out) both}
+.hero .hero-star{animation:twist 35s linear infinite,fade-in 1s .3s both}
+.hero .lead{animation:rise-in .9s .23s var(--ease-out) both}
+.hero .hero-facts{animation:rise-in .9s .34s var(--ease-out) both}
+.hero .scroll-link{animation:fade-in .9s .6s both}
+@keyframes rise-in{from{opacity:0;transform:translate3d(0,34px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
+@keyframes fade-in{from{opacity:0}to{opacity:1}}
+.js-motion .reveal{opacity:0;transform:translate3d(0,46px,0);transition:opacity 1s var(--ease-out),transform 1s var(--ease-out);transition-delay:var(--delay,0ms)}
+.js-motion .reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+.js-motion .work-row.reveal{transform:translate3d(0,24px,0)}
+.js-motion .work-row.reveal.is-visible{transform:translate3d(0,0,0)}
+.work-row .work-arrow{transition:transform .35s var(--ease-out)}
+.work-row:hover .work-arrow{transform:translate(5px,-5px)}
+.contact-links a{transition:background .25s ease,color .25s ease,transform .35s var(--ease-out)}
+.contact-links a:hover{transform:translateY(-4px)}
+.project-gallery img{transition:filter .5s ease,transform .7s var(--ease-out)}
+.project-gallery a:hover img{transform:scale(1.035)}
+.section-index{transition:letter-spacing .5s var(--ease-out)}
+.section:has(.is-visible)>.section-index{letter-spacing:.14em}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero .hero-star,.hero .lead,.hero .hero-facts,.hero .scroll-link{animation:none!important}body::before{transition:none}}
