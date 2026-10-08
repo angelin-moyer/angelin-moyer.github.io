@@ -1,13 +1,16 @@
-# Optional Open-ended Portfolio AI
-The GitHub Pages site is static. The currently deployed assistant uses built-in answers until you configure a secure backend.
+# Free-only portfolio AI (Cloudflare Workers AI)
+This project uses Cloudflare Workers AI's free allocation and **does not use OpenAI API billing**.
 
-## Deploy
-1. Create a Cloudflare Worker and paste in `worker/portfolio-ai.js`.
-2. Set the Worker secret `OPENAI_API_KEY` in the Cloudflare dashboard (never put the key in GitHub or frontend JavaScript).
-3. Optionally set `MODEL` to a supported model ID.
-4. Deploy, and note its HTTPS URL.
-5. In the website's `assistant.js`, replace the empty `window.PORTFOLIO_AI_ENDPOINT` setting with that HTTPS URL.
+## To activate
+1. Create a **Cloudflare Free** account at https://dash.cloudflare.com/ (do not upgrade to Workers Paid).
+2. Create a Worker in Workers & Pages. Paste or upload `worker/portfolio-ai.js`.
+3. Add a **Workers AI binding**, variable name `AI`, in the Worker's Settings > Bindings.
+4. Deploy the Worker and copy its URL (for example, `https://your-worker.your-name.workers.dev`).
+5. Edit `assistant.js`: set `window.PORTFOLIO_AI_ENDPOINT` to that URL. Never put API secrets in site JavaScript.
+6. Test the conversation from https://angelin-moyer.github.io/.
 
-The worker restricts browser requests to the published website, limits message sizes, and avoids logging chat contents in this code. **Origin restrictions are not authentication**. Before public launch, configure provider-side spending limits, rate limiting (and ideally Cloudflare Turnstile or equivalent abuse protection). Anyone can send requests to a public Worker endpoint unless stronger controls are added.
+The Worker uses `@cf/zai-org/glm-4.7-flash`, listed by Cloudflare as supported on Free as of October 2026. Cloudflare documents 10,000 free Neurons per day on the Workers Free plan; when your free allotment is exceeded, additional inference requests fail rather than incurring Workers Paid charges. The free Worker tier has other execution/request limits.
 
-The fallback assistant answers questions about the portfolio even without a Worker.
+**Important for public sites:** CORS origin checks are not access control. To prevent strangers from abusing a public AI endpoint, add Cloudflare rate limiting and ideally Turnstile before promoting it widely. The code imposes length limits but not per-visitor request quotas. A free quota can run out even without billing charges. Verify current free limits in the Cloudflare dashboard before launch.
+
+The website falls back to its existing prepared-answer FAQ when the Worker is unavailable or not yet configured.
