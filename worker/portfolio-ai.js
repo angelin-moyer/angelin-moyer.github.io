@@ -1,29 +1,25 @@
-// Deploy this file as a Cloudflare Worker with secret OPENAI_API_KEY.
-// Configure MODEL to an available model and set allowed origin to your portfolio.
-const ORIGIN = 'https://angelin-moyer.github.io';
-const BACKGROUND = `You are Angelin Moyer's friendly portfolio assistant. Answer open-ended questions conversationally, including general questions, without pretending to be Angelin. When asked about Angelin, stick to these verified facts: University of Colorado Boulder B.S. Information Science, Business minor, Google Advanced Data Analytics certificate. Work: AI Strategy Fellow at Call for Code AI collaborating across product/technical/partner teams; Team Lead at OZO Coffee. Projects: Smoking Prevalence interactive data visualization on demographics and geography; BalanceBasket grocery/budgeting capstone (backend FastAPI, SQLite, SQLAlchemy, AI assistant with budget/pantry/dietary context); LLM evaluation harness on pass rate, refusal accuracy, hallucination and consistency; semantic search quality with Ollama/embeddings/RAG. Skills: SQL, Python, Pandas, Tableau, Power BI, FastAPI, ML and NLP. Location displayed: Denver, Colorado. Interested in analytics, BI and applied AI. Avoid inventing employment, accomplishments, specific metrics, or intimate personal details. Say when you do not know personal facts. Encourage emailing her for hiring inquiries at angiemoyer14@gmail.com.`;
+// Cloudflare Workers Free + Workers AI binding. No API key, no paid OpenAI API.
+// Configure the AI binding in the Cloudflare dashboard with variable name AI.
+const ORIGIN='https://angelin-moyer.github.io';
+const SYSTEM=`You are a friendly AI guide on Angelin Moyer's public portfolio. Answer any reasonable question conversationally. For questions about Angelin, use these confirmed professional facts only: Angelin is an Information Science graduate of the University of Colorado Boulder with a Business minor and Google Advanced Data Analytics Professional Certificate. She is located in Denver, Colorado. Her work includes an AI Strategy Fellowship at Call for Code AI (cross-functional requirements and technical/product collaboration) and team leadership at OZO Coffee. Her projects include BalanceBasket (AI grocery/budgeting capstone; backend FastAPI, SQLite/SQLAlchemy, context-aware assistant), Smoking Prevalence data visualizations exploring demographics and geography, an LLM Evaluation Harness comparing models using structured prompts and quality metrics, and Search Quality Evaluation using embeddings, semantic retrieval, Ollama and RAG. Skills include SQL, Python, Pandas, Tableau, Power BI, FastAPI, scikit-learn, data visualization, applied AI. She is interested in data analysis, BI, and applied AI. Her professional contact is angiemoyer14@gmail.com and LinkedIn is linkedin.com/in/angelin-moyer. Do not invent personal facts or results. If you do not know something specific about Angelin, say so and suggest contacting her. Do not pretend to be Angelin. Keep answers typically under 180 words. General questions outside her portfolio can be answered too.`;
 export default {
- async fetch(request, env) {
-  const headers = {'Access-Control-Allow-Origin':ORIGIN,'Access-Control-Allow-Methods':'POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Vary':'Origin','Content-Type':'application/json'};
-  const json=(data,status=200)=>new Response(JSON.stringify(data),{status,headers});
-  if(request.method==='OPTIONS')return new Response(null,{status:204,headers});
-  if(request.method!=='POST')return json({error:'Method not allowed'},405);
-  if(request.headers.get('Origin')!==ORIGIN)return json({error:'Origin not allowed'},403);
-  if(!env.OPENAI_API_KEY)return json({error:'AI service not configured'},503);
-  const size=Number(request.headers.get('content-length')||0);
-  if(size>16000)return json({error:'Request too large'},413);
-  let body;try{body=await request.json()}catch{return json({error:'Invalid JSON'},400)}
-  const messages=Array.isArray(body.messages)?body.messages.slice(-12):[];
-  if(!messages.length)return json({error:'Missing messages'},400);
-  const safe=messages.filter(m=>m && ['user','assistant'].includes(m.role)&&typeof m.content==='string').map(m=>({role:m.role,content:m.content.slice(0,1500)}));
-  if(!safe.length||safe[safe.length-1].role!=='user')return json({error:'Missing user question'},400);
-  if(safe.reduce((n,m)=>n+m.content.length,0)>14000)return json({error:'Conversation too long'},413);
-  try{
-   const upstream=await fetch('https://api.openai.com/v1/responses',{method:'POST',headers:{'Authorization':'Bearer '+env.OPENAI_API_KEY,'Content-Type':'application/json'},body:JSON.stringify({model:env.MODEL||'gpt-4.1-mini',instructions:BACKGROUND,input:safe,max_output_tokens:350,store:false})});
-   if(!upstream.ok)return json({error:'Model service unavailable'},502);
-   const result=await upstream.json();
-   const answer=(result.output||[]).filter(o=>o.type==='message').flatMap(o=>o.content||[]).filter(c=>c.type==='output_text').map(c=>c.text).join('\n').trim();
-   return answer?json({answer}):json({error:'No answer returned'},502);
-  }catch{return json({error:'Chat request failed'},502)}
+ async fetch(req,env) {
+  const headers={'Access-Control-Allow-Origin':ORIGIN,'Access-Control-Allow-Methods':'POST, OPTIONS','Access-Control-Allow-Headers':'Content-Type','Vary':'Origin','Content-Type':'application/json'};
+  const reply=(o,status=200)=>new Response(JSON.stringify(o),{status,headers});
+  if(req.method==='OPTIONS')return new Response(null,{status:204,headers});
+  if(req.method!=='POST')return reply({error:'Method not allowed'},405);
+  if(req.headers.get('Origin')!==ORIGIN)return reply({error:'Origin not allowed'},403);
+  if(!env.AI)return reply({error:'Workers AI binding not configured'},503);
+  if(Number(req.headers.get('content-length')||0)>16000)return reply({error:'Request too large'},413);
+  let body;try{body=await req.json()}catch{return reply({error:'Invalid JSON'},400)}
+  const input=Array.isArray(body.messages)?body.messages.slice(-10):[];
+  const safe=input.filter(m=>m && ['user','assistant'].includes(m.role)&&typeof m.content==='string').map(m=>({role:m.role,content:m.content.slice(0,1000)}));
+  if(!safe.length||safe[safe.length-1].role!=='user')return reply({error:'Last message must be a question'},400);
+  if(safe.reduce((n,m)=>n+m.content.length,0)>8500)return reply({error:'Conversation too long'},413);
+  try {
+   const response=await env.AI.run('@cf/zai-org/glm-4.7-flash',{messages:[{role:'system',content:SYSTEM},...safe],max_tokens:400,temperature:0.4});
+   const answer=typeof response.response==='string'?response.response.trim():'';
+   return answer?reply({answer}):reply({error:'No answer returned'},502);
+  }catch(err){return reply({error:'Free AI temporarily unavailable or daily limit reached'},503)}
  }
 };
