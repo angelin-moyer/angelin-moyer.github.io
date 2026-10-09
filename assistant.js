@@ -1,4 +1,4 @@
-window.PORTFOLIO_AI_ENDPOINT = window.PORTFOLIO_AI_ENDPOINT || '';
+window.PORTFOLIO_AI_ENDPOINT = 'https://polished-brook-8de0.angelin-moyer.workers.dev';
 (()=>{
 const form=document.getElementById('chat-form'),input=document.getElementById('chat-question'),log=document.getElementById('chat-log');if(!form||!input||!log)return;
 const facts=[
