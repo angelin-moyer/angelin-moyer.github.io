@@ -24,3 +24,72 @@
 .editorial-project[open]>.work-row,.editorial-project .project-reveal{background:#eef1eb}
 .project-feature h3{letter-spacing:-.045em}
 @media(max-width:900px){.hero{min-height:auto;padding-bottom:75px}}
+
+
+/* New visual direction: warm neutrals, soft rose, clean typography */
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;650;700;750;800&display=swap');
+:root{
+  --ink:#292625;
+  --muted:#77706e;
+  --bg:#faf7f5;
+  --line:#e7dedb;
+  --accent:#b97882;
+  --white:#fffdfc;
+}
+body{font-family:'Manrope',Arial,sans-serif;background:var(--bg);color:var(--ink)}
+::selection{background:#f0d9dc;color:var(--ink)}
+a:focus-visible{outline-color:var(--accent)}
+.topbar{border-color:var(--line)}
+.wordmark{font-family:'Manrope',Arial,sans-serif;font-weight:750;letter-spacing:-.07em}
+.asterisk{background:var(--accent)}
+.topbar-caption,.topbar nav,.hero-kicker,.micro-label,.section-index,.count,.underlabel,.scroll-link,.work-year,.work-code,.work-arrow,.project-gallery span,.tool-grid span,.time-item>span,.time-item small,.contact-links,.site-wrap footer{font-family:'DM Mono',monospace}
+.topbar nav a:hover,.contact-links a:hover{color:var(--accent)}
+.section{border-color:var(--line)}
+.hero{
+ min-height:66vh;
+ padding-top:34px;
+ padding-bottom:78px;
+ justify-content:center;
+}
+.hero-kicker{font-size:11px;letter-spacing:.12em;color:var(--accent);margin-bottom:48px}
+.hero-title{margin:0}
+.hero h1{
+ font-family:'Manrope',Arial,sans-serif;
+ font-size:clamp(56px,9.2vw,132px);
+ line-height:.99;
+ letter-spacing:-.085em;
+ font-weight:650;
+ margin:0;
+ max-width:1100px;
+}
+.hero h1 em,.section-intro h2 em,.contact h2 em{
+ font-family:'Manrope',Arial,sans-serif;
+ font-style:normal;
+ font-weight:500;
+ letter-spacing:-.08em;
+ color:var(--accent);
+}
+.hero-lower{display:block;margin-top:34px}
+.lead{font-size:clamp(18px,2vw,25px);line-height:1.55;letter-spacing:-.035em;max-width:620px;color:var(--muted)}
+.section-index,.micro-label,.count,.underlabel{color:var(--accent)}
+.work-row:hover{background:#f2e9e8}
+.editorial-project[open]>.work-row,.editorial-project .project-reveal{background:#f5eeec}
+.project-gallery img{background:#f1e8e6}
+.contact{background:#332b2c;color:#faf7f5}
+.contact .section-index,.contact .micro-label{color:#e2b7bd}
+.contact-inner>p{color:#e0d3d2}
+.contact-links a{border-color:#9c8587}
+.contact-links a:hover{background:#faf7f5;color:#332b2c}
+body::before{background:#c88f97}
+@media(max-width:900px){
+ .hero{min-height:auto;padding-top:80px;padding-bottom:85px}
+ .hero-kicker{margin-bottom:35px}
+ .hero h1{font-size:clamp(55px,10vw,100px)}
+}
+@media(max-width:600px){
+ .hero{padding-top:65px;padding-bottom:70px}
+ .hero-kicker{margin-bottom:28px}
+ .hero h1{font-size:clamp(48px,11vw,76px)}
+ .hero-lower{margin-top:25px}
+ .lead{font-size:19px}
+}
