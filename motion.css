@@ -4,7 +4,7 @@ body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:
 .site-wrap{overflow:clip}
 .hero .eyebrow{animation:rise-in .7s var(--ease-out) both}
 .hero h1{animation:rise-in 1s .08s var(--ease-out) both}
-.hero .hero-star{animation:twist 35s linear infinite,fade-in 1s .3s both}
+
 .hero .lead{animation:rise-in .9s .23s var(--ease-out) both}
 .hero .hero-facts{animation:rise-in .9s .34s var(--ease-out) both}
 .hero .scroll-link{animation:fade-in .9s .6s both}
@@ -22,4 +22,4 @@ body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:
 .project-gallery a:hover img{transform:scale(1.035)}
 .section-index{transition:letter-spacing .5s var(--ease-out)}
 .section:has(.is-visible)>.section-index{letter-spacing:.14em}
-@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero .hero-star,.hero .lead,.hero .hero-facts,.hero .scroll-link{animation:none!important}body::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero .lead,.hero .hero-facts,.hero .scroll-link{animation:none!important}body::before{transition:none}}
