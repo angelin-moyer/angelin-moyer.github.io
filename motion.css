@@ -2,10 +2,11 @@
 :root{--ease-out:cubic-bezier(.22,1,.36,1)}
 body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:var(--reading-progress,0%);background:#6b9675;transition:width .08s linear;pointer-events:none}
 .site-wrap{overflow:clip}
-.hero .eyebrow{animation:rise-in .7s var(--ease-out) both}
+.hero .hero-kicker{animation:rise-in .7s var(--ease-out) both}
 .hero h1{animation:rise-in 1s .08s var(--ease-out) both}
 
 .hero .lead{animation:rise-in .9s .23s var(--ease-out) both}
+.hero-bottomline{animation:fade-in 1s .55s both}
 .hero .hero-facts{animation:rise-in .9s .34s var(--ease-out) both}
 .hero .scroll-link{animation:fade-in .9s .6s both}
 @keyframes rise-in{from{opacity:0;transform:translate3d(0,34px,0)}to{opacity:1;transform:translate3d(0,0,0)}}
@@ -22,4 +23,6 @@ body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:
 .project-gallery a:hover img{transform:scale(1.035)}
 .section-index{transition:letter-spacing .5s var(--ease-out)}
 .section:has(.is-visible)>.section-index{letter-spacing:.14em}
-@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero .lead,.hero .hero-facts,.hero .scroll-link{animation:none!important}body::before{transition:none}}
+@media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .hero-kicker,.hero h1,.hero .lead,.hero .hero-bottomline{animation:none!important}body::before{transition:none}}
+
+@media(prefers-reduced-motion:reduce){.orbit-one,.orbit-two,.orbit-three{animation:none!important}}
