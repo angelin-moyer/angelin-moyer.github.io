@@ -357,3 +357,26 @@ body::before{background:#f04496}
 }
 .bouquet-illustration .bouquet-wrap{transform-origin:50% 15%;animation:held-bouquet 3s ease-in-out infinite}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration .bouquet-wrap{animation:none!important}}
+
+/* Make the carry unmistakable: continuous forearms, hands wrapped around the cone */
+.bouquet-illustration .editorial-walker .arm-shape{
+  fill:#f6c8d8;
+  stroke:#54213f;
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.bouquet-illustration .editorial-walker .hand-shape{
+  fill:#f6c8d8;
+  stroke:#54213f;
+  stroke-width:2.3;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.bouquet-illustration .editorial-walker .finger-detail{
+  fill:none;
+  stroke:#8b4a67;
+  stroke-width:1.45;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
