@@ -201,3 +201,45 @@ body::before{background:#f04496}
 @media(max-width:900px){.hero-stage{grid-template-columns:1fr 1fr;min-height:560px}.hero-art.layered-scene{max-width:520px}.hero h1{font-size:clamp(50px,6.3vw,80px)}}
 @media(max-width:650px){.hero{padding:25px 6% 22px}.hero-stage{grid-template-columns:1fr;gap:0;min-height:0;padding:40px 0 20px}.hero h1{font-size:clamp(51px,11.8vw,74px)}.hero-lead{font-size:15px;margin-top:22px}.hero-art.layered-scene{width:100%;max-width:470px;margin:0 auto;transform:translateX(-1%)}.hero-bottomline{font-size:7px;gap:10px}.hero-actions{gap:18px;flex-wrap:wrap}.main-interface{width:67%;left:16%;top:19%}.mobile-interface{right:2%;width:26%}.chart-interface{left:0;width:29%}}
 @media(prefers-reduced-motion:reduce){.shape-pink,.shape-orange,.shape-lilac,.shape-star,.shape-dot,.main-interface,.mobile-interface,.chart-interface{animation:none!important;opacity:1;translate:none}}
+
+
+/* Hand-drawn technical bouquet hero */
+.hero-art.bouquet-scene{position:relative;width:100%;max-width:650px;aspect-ratio:620/560;justify-self:center;isolation:isolate;display:grid;place-items:center;overflow:visible}
+.bouquet-glow{position:absolute;inset:8% 5% 11%;border-radius:48% 52% 50% 45%;background:radial-gradient(ellipse at 55% 42%,#fff8fc 0%,#ff9bc8 35%,#ff956c38 68%,transparent 74%);filter:blur(12px);opacity:.9}
+.bouquet-illustration{position:relative;z-index:1;width:100%;height:100%;overflow:visible}
+.bouquet-illustration path,.bouquet-illustration circle,.bouquet-illustration rect{vector-effect:non-scaling-stroke}
+.bouquet-ground path{fill:none;stroke:#9e416c;stroke-width:1.2;opacity:.22;stroke-linecap:round}
+.bouquet-sprigs path,.bouquet-wrap path{fill:none;stroke:#55213f;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-sprigs path:nth-child(2){stroke:#e13c8b;stroke-width:2}
+.bouquet-sprigs path:nth-child(3){stroke:#ff805b;stroke-width:2}
+.bouquet-wrap .wrap-accent{fill:#ff8dbd;fill-opacity:.42;stroke:#e13c8b;stroke-width:2}
+.tech-bloom{transform-box:fill-box;transform-origin:center;animation:bloom-in .9s cubic-bezier(.2,.8,.2,1) both,bloom-sway 5s ease-in-out 1s infinite}
+.tech-bloom circle:first-child{fill:#fff7fb;stroke:#55213f;stroke-width:2.2}
+.tech-bloom path,.tech-bloom rect{fill:none;stroke:#55213f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tech-bloom .bloom-core{fill:#ff875f;stroke:#e13c8b;stroke-width:1.5}
+.bloom-code{animation-delay:.05s,1.05s}.bloom-interface{animation-delay:.18s,1.18s}.bloom-nodes{animation-delay:.3s,1.3s}.bloom-chart{animation-delay:.42s,1.42s}.bloom-data{animation-delay:.54s,1.54s}
+.woman path{fill:none;stroke:#45142f;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.woman .woman-dress{fill:#fff5fa;fill-opacity:.5;stroke-width:3.3}
+.woman .dress-detail,.woman .dress-fold{stroke:#c7357d;stroke-width:1.7}
+.woman .woman-head{fill:#fff2f8;stroke-width:3}
+.woman .woman-hair{fill:#45142f;stroke:#45142f;stroke-width:2}
+.woman .hair-flow{stroke:#ff8dbd;stroke-width:1.7}
+.woman .face-detail{stroke-width:1.5}
+.woman .woman-collar{stroke:#e13c8b;stroke-width:2.2}
+.woman .woman-hand{fill:#fff2f8;stroke-width:2.5}
+.woman-front-leg,.woman-back-leg{transform-box:fill-box;transform-origin:50% 5%;animation:walk-leg .8s ease-in-out infinite alternate}
+.woman-back-leg{animation-delay:-.8s}
+.woman{animation:woman-bob .8s ease-in-out infinite alternate;transform-origin:50% 70%}
+.bouquet-wrap{transform-box:fill-box;transform-origin:50% 50%;animation:bouquet-sway 2.4s ease-in-out infinite}
+.bouquet-caption{position:absolute;z-index:2;right:2%;bottom:3%;font:10px 'DM Mono',monospace;letter-spacing:.14em;color:#783354}
+.bouquet-caption span{color:#e13c8b}
+.accent-details path{fill:none;stroke:#ed3b91;stroke-width:2;stroke-linecap:round;opacity:.85}
+.accent-details circle{fill:#ff805b}
+@keyframes bloom-in{from{opacity:0;scale:.45}to{opacity:1;scale:1}}
+@keyframes bloom-sway{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes walk-leg{from{rotate:-7deg}to{rotate:8deg}}
+@keyframes woman-bob{from{translate:0 0}to{translate:0 -2px}}
+@keyframes bouquet-sway{0%,100%{rotate:-1deg}50%{rotate:2deg}}
+@media(max-width:900px){.hero-art.bouquet-scene{max-width:520px}}
+@media(max-width:650px){.hero-art.bouquet-scene{width:100%;max-width:470px;margin:0 auto;transform:translateX(-1%)}.bouquet-caption{font-size:8px;right:0}}
+@media(prefers-reduced-motion:reduce){.bouquet-illustration *, .bouquet-wrap,.woman,.woman-front-leg,.woman-back-leg{animation:none!important}}
