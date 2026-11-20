@@ -74,3 +74,20 @@
 .world-footer{margin-top:10px}
 .tiny-mascot span{font:600 9px 'Manrope',sans-serif;letter-spacing:0;color:#fff4f8;background:#9f3f72;border-color:#e88ab5}
 @media(max-width:650px){.world-object{grid-template-columns:1fr auto;padding:15px 8px}.object-name{font-size:17px}.object-hint{font-size:8px}.guide-instructions{font-size:11px}}
+
+
+/* Higher-contrast guide navigation */
+.world-heading,.world-footer{color:#7e315b}
+.guide-instructions{color:#71304f}
+.world-heading span:last-child{opacity:1;color:#a64c42}
+.object-name{color:#7e315b}
+.object-hint{color:#a64c42}
+.world-object:hover .object-name,.world-object.is-active .object-name{color:#c34e79}
+.world-object{border-color:#d9a8bf}
+.world-footer{border-color:#d9a8bf}
+
+/* Keep the guide alongside the reader until they return home */
+.tiny-mascot.guide-companion{position:fixed;left:auto;right:clamp(16px,4vw,56px);top:auto;bottom:24px;width:78px;transform:none!important;z-index:9999;pointer-events:none}
+.tiny-mascot.guide-companion svg{width:68px;height:86px}
+.tiny-mascot.guide-companion span{font-size:8px;padding:5px 8px;color:#fff8fc;background:#87345f;border-color:#d985ad}
+@media(max-width:650px){.tiny-mascot.guide-companion{right:12px;bottom:14px;width:64px}.tiny-mascot.guide-companion svg{width:56px;height:72px}}
