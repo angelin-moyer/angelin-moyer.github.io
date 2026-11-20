@@ -91,3 +91,13 @@
 .tiny-mascot.guide-companion svg{width:68px;height:86px}
 .tiny-mascot.guide-companion span{font-size:8px;padding:5px 8px;color:#fff8fc;background:#87345f;border-color:#d985ad}
 @media(max-width:650px){.tiny-mascot.guide-companion{right:12px;bottom:14px;width:64px}.tiny-mascot.guide-companion svg{width:56px;height:72px}}
+
+
+/* Remove the duplicate heading; keep the guide's own hello bubble */
+.world-heading{display:none!important}
+.tiny-mascot{left:calc(50% - 54px);top:-104px;width:108px}
+.tiny-mascot svg{width:98px;height:124px}
+@media(max-width:650px){
+ .tiny-mascot{left:calc(50% - 49px);top:-94px;width:98px}
+ .tiny-mascot svg{width:90px;height:114px}
+}
