@@ -115,7 +115,7 @@
 .world-stage{padding-top:42px!important}
 @media(max-width:650px){.guide-instructions{margin-top:38px!important}.world-stage{padding-top:34px!important}}
 
-/* Strong layout separation: move the directions and list below the mascot */
-.interactive-world>.guide-instructions{margin:110px 0 12px!important}
-.interactive-world>.world-stage{padding-top:70px!important}
-@media(max-width:650px){.interactive-world>.guide-instructions{margin-top:88px!important}.interactive-world>.world-stage{padding-top:58px!important}}
+/* Refine instruction size and bring it closer to the section list */
+.interactive-world>.guide-instructions{font-size:14px!important;margin:110px 0 4px!important}
+.interactive-world>.world-stage{padding-top:18px!important}
+@media(max-width:650px){.interactive-world>.guide-instructions{font-size:13px!important;margin-top:88px!important}.interactive-world>.world-stage{padding-top:14px!important}}
