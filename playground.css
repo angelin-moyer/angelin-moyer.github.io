@@ -101,3 +101,11 @@
  .tiny-mascot{left:calc(50% - 49px);top:-94px;width:98px}
  .tiny-mascot svg{width:90px;height:114px}
 }
+
+/* Lift the guide clear of the instruction line */
+.tiny-mascot{top:-142px}
+@media(max-width:650px){.tiny-mascot{top:-128px}}
+/* Keep the travelling guide attached to the viewport, outside transformed sections */
+.tiny-mascot.is-travelling{position:fixed!important;left:auto!important;right:clamp(16px,4vw,56px)!important;top:42%!important;bottom:auto!important}
+.tiny-mascot.guide-companion{position:fixed!important;left:auto!important;right:clamp(16px,4vw,56px)!important;top:auto!important;bottom:24px!important}
+@media(max-width:650px){.tiny-mascot.is-travelling{right:12px!important;top:46%!important}.tiny-mascot.guide-companion{right:12px!important;bottom:14px!important}}
