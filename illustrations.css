@@ -247,10 +247,12 @@ body::before{background:#f04496}
 .bouquet-illustration .stems path{fill:none;stroke:#63304d;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
 .bouquet-illustration .stems .leaf-stem{stroke:#e13c8b;stroke-width:1.7}
 .bouquet-illustration .stems .leaf{fill:#ff9bc4;fill-opacity:.45;stroke:#a63d70;stroke-width:1.7}
-.bouquet-illustration .flower{transform-box:fill-box;transform-origin:center;animation:flower-open .8s cubic-bezier(.2,.8,.2,1) both}
-.bouquet-illustration .flower-code{animation-delay:.04s}.bouquet-illustration .flower-interface{animation-delay:.15s}.bouquet-illustration .flower-network{animation-delay:.26s}.bouquet-illustration .flower-chart{animation-delay:.37s}.bouquet-illustration .flower-data{animation-delay:.48s}
-.bouquet-illustration .petals{fill:#ff9bc5;fill-opacity:.78;stroke:#8e315e;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
-.bouquet-illustration .flower:nth-of-type(even) .petals{fill:#ffb08d}
+.bouquet-illustration .flower{transform-box:fill-box;transform-origin:50% 88%;animation:flower-open .8s cubic-bezier(.2,.8,.2,1) both,flower-sway 4.8s ease-in-out .8s infinite}
+.bouquet-illustration .flower-code{animation-delay:.04s,.8s}.bouquet-illustration .flower-interface{animation-delay:.15s,1.4s}.bouquet-illustration .flower-network{animation-delay:.26s,1s}.bouquet-illustration .flower-chart{animation-delay:.37s,1.7s}.bouquet-illustration .flower-data{animation-delay:.48s,1.2s}
+.bouquet-illustration .petals{fill:#ff9bc5;fill-opacity:.9;stroke:#8e315e;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .flower:nth-of-type(even) .petals{fill:#ffad88}
+.bouquet-illustration .flower-center{fill:#fff4f9;stroke:#8e315e;stroke-width:1.5;stroke-linejoin:round}
+.bouquet-illustration .flower-tech{fill:none;stroke:#63264a;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round}
 .bouquet-illustration .flower-center{fill:#fff4f9;stroke:#8e315e;stroke-width:1.7;stroke-linejoin:round}
 .bouquet-illustration .flower-tech{fill:none;stroke:#63264a;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
 .bouquet-illustration .node-dot{fill:#e83d8e;stroke:#fff4f9;stroke-width:1}
@@ -404,4 +406,19 @@ body::before{background:#f04496}
   10%{opacity:1}
   55%{opacity:.95;transform:translate(17px,45px) rotate(48deg) scale(1)}
   100%{opacity:0;transform:translate(42px,120px) rotate(145deg) scale(.9)}
+}
+
+
+/* Gentle botanical movement: each bloom sways from its stem */
+.bouquet-illustration .stems{transform-box:fill-box;transform-origin:50% 100%;animation:stem-sway 5.6s ease-in-out infinite}
+@keyframes flower-sway{
+  0%,100%{transform:rotate(-1.6deg) translateY(0)}
+  50%{transform:rotate(1.8deg) translateY(-2px)}
+}
+@keyframes stem-sway{
+  0%,100%{transform:rotate(-.45deg)}
+  50%{transform:rotate(.65deg)}
+}
+@media(prefers-reduced-motion:reduce){
+  .bouquet-illustration .flower,.bouquet-illustration .stems{animation:none!important}
 }
