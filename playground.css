@@ -60,3 +60,5 @@
 .tiny-mascot.guide-companion span{font-size:7px;padding:4px 7px}
 .section{position:relative}
 @media(max-width:650px){.world-stage{min-height:0;padding:5px 0}.world-object{grid-template-columns:44px 1fr auto;padding:12px 8px;gap:10px}.object-icon{width:40px;height:39px}.object-name{font-size:10px}.object-hint{font-size:7px}.tiny-mascot{top:-72px}.tiny-mascot.guide-companion{right:5%;top:12px}}
+.tiny-mascot.is-travelling{position:fixed!important;left:auto!important;right:5%;top:43%;width:76px;transform:none!important;z-index:9999;pointer-events:none}.tiny-mascot.is-travelling svg{width:68px;height:86px}.tiny-mascot.is-travelling span{background:#3b2338;color:#f4c6dd;border-color:#a86c91}
+@media(max-width:650px){.tiny-mascot.is-travelling{right:3%;top:48%;width:62px}.tiny-mascot.is-travelling svg{width:56px;height:72px}}
