@@ -109,3 +109,8 @@
 .tiny-mascot.is-travelling{position:fixed!important;left:auto!important;right:clamp(16px,4vw,56px)!important;top:42%!important;bottom:auto!important}
 .tiny-mascot.guide-companion{position:fixed!important;left:auto!important;right:clamp(16px,4vw,56px)!important;top:auto!important;bottom:300px!important}
 @media(max-width:650px){.tiny-mascot.is-travelling{right:12px!important;top:46%!important}.tiny-mascot.guide-companion{right:12px!important;bottom:240px!important}}
+
+/* Give the directions and section list more room below the guide */
+.guide-instructions{margin-top:48px!important}
+.world-stage{padding-top:42px!important}
+@media(max-width:650px){.guide-instructions{margin-top:38px!important}.world-stage{padding-top:34px!important}}
