@@ -26,3 +26,9 @@ body::before{content:"";position:fixed;left:0;top:0;z-index:99;height:3px;width:
 @media(prefers-reduced-motion:reduce){.js-motion .reveal{opacity:1!important;transform:none!important;transition:none!important}.hero .hero-kicker,.hero h1,.hero .lead,.hero .hero-bottomline{animation:none!important}body::before{transition:none}}
 
 @media(prefers-reduced-motion:reduce){.orbit-one,.orbit-two,.orbit-three{animation:none!important}}
+
+/* Hero-specific motion overrides: the child lines own their entrance animation */
+.hero h1{animation:none!important}
+.hero .hero-kicker{animation:none}
+.hero .lead{animation:none}
+@media(prefers-reduced-motion:reduce){.hero h1,.hero .hero-line,.hero .lead{animation:none!important;opacity:1!important;transform:none!important}}
