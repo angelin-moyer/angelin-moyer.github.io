@@ -309,3 +309,33 @@ body::before{background:#f04496}
 @keyframes editorial-bob{0%,100%{translate:0 0}50%{translate:0 -2px}}
 @keyframes editorial-stride{0%,100%{rotate:-4deg}50%{rotate:5deg}}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration .editorial-walker,.bouquet-illustration .stride-front,.bouquet-illustration .stride-back{animation:none!important}}
+
+
+/* Open doorway scene: an elegant walking figure carrying the bouquet toward a destination */
+.bouquet-scene .bouquet-glow{inset:7% 2% 8%;background:radial-gradient(ellipse at 52% 43%,#fff8fc 0%,#ffb0d0 36%,#ff956c25 70%,transparent 76%)}
+.bouquet-illustration .doorway path{vector-effect:non-scaling-stroke;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .doorway-outer{stroke:#7e3158;stroke-width:3.2}
+.bouquet-illustration .doorway-inner{stroke:#d94b91;stroke-width:2.2}
+.bouquet-illustration .doorway-light{fill:#fff4f9;stroke:#f28bb8;stroke-width:1.4}
+.bouquet-illustration .doorway-floor{stroke:#7e3158;stroke-width:2;opacity:.55}
+.bouquet-illustration .doorway-step{stroke:#e16b9e;stroke-width:1.6}
+.bouquet-illustration .doorway-sun{fill:#ff9a70;stroke:#d94b91;stroke-width:1.4}
+.bouquet-illustration .doorway{transform-origin:516px 280px;animation:doorway-arrive 1.3s cubic-bezier(.2,.8,.2,1) both}
+.bouquet-illustration .editorial-walker{transform-box:fill-box;transform-origin:50% 88%;animation:editorial-bob 1.15s ease-in-out infinite}
+.bouquet-illustration .editorial-walker .leg-shape{fill:#f3bfd2;stroke:#54213f;stroke-width:2.5;stroke-linejoin:round}
+.bouquet-illustration .editorial-walker .shoe-shape{fill:#54213f;stroke:#54213f;stroke-width:1.8}
+.bouquet-illustration .editorial-walker .front-leg,.bouquet-illustration .editorial-walker .back-leg{transform-box:fill-box;transform-origin:50% 8%;animation:editorial-stride 1.15s ease-in-out infinite}
+.bouquet-illustration .editorial-walker .back-leg{animation-delay:-.575s}
+.bouquet-illustration .editorial-walker .dress-shape{fill:#fff3f8;stroke:#54213f;stroke-width:2.7;stroke-linejoin:round}
+.bouquet-illustration .editorial-walker .dress-seam,.bouquet-illustration .editorial-walker .waist-seam,.bouquet-illustration .editorial-walker .dress-hem{fill:none;stroke:#d94b91;stroke-width:1.5}
+.bouquet-illustration .editorial-walker .neck-shape,.bouquet-illustration .editorial-walker .head-shape{fill:#f6c8d8;stroke:#54213f;stroke-width:2.4}
+.bouquet-illustration .editorial-walker .face-line{fill:none;stroke:#7e4560;stroke-width:1.4}
+.bouquet-illustration .editorial-walker .hair-shape,.bouquet-illustration .editorial-walker .hair-fall{fill:#54213f;stroke:#54213f;stroke-width:1.8}
+.bouquet-illustration .editorial-walker .hair-line{fill:none;stroke:#d77a9f;stroke-width:1.4}
+.bouquet-illustration .editorial-walker .arm-shape{fill:none;stroke:#f6c8d8;stroke-width:12;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .editorial-walker .arm-shape{stroke:#54213f;stroke-width:2.5}
+.bouquet-illustration .editorial-walker .hand-shape{fill:#f6c8d8;stroke:#54213f;stroke-width:2}
+.bouquet-illustration .editorial-walker .sleeve-detail{fill:none;stroke:#d94b91;stroke-width:1.4}
+.bouquet-illustration .bouquet-wrap{transform-origin:50% 15%;animation:held-bouquet 2.8s ease-in-out infinite}
+@keyframes doorway-arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
+@media(prefers-reduced-motion:reduce){.bouquet-illustration .doorway,.bouquet-illustration .editorial-walker,.bouquet-illustration .front-leg,.bouquet-illustration .back-leg,.bouquet-illustration .bouquet-wrap{animation:none!important}}
