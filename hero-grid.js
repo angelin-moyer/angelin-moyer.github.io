@@ -33,6 +33,7 @@
   let pointer = null;
   let frame = 0;
   function render() {
+    let unsettled = false;
     frame = 0;
     const rect = visual.getBoundingClientRect();
     const scaleX = 480 / rect.width;
@@ -53,8 +54,11 @@
           dy = (vy / distance) * strength;
         }
       }
-      point.xNow += (point.x + dx - point.xNow) * 0.22;
-      point.yNow += (point.y + dy - point.yNow) * 0.22;
+      const targetX = point.x + dx;
+      const targetY = point.y + dy;
+      point.xNow += (targetX - point.xNow) * 0.22;
+      point.yNow += (targetY - point.yNow) * 0.22;
+      if (Math.abs(targetX - point.xNow) > 0.25 || Math.abs(targetY - point.yNow) > 0.25) unsettled = true;
       point.element.setAttribute("cx", point.xNow.toFixed(2));
       point.element.setAttribute("cy", point.yNow.toFixed(2));
       point.element.style.opacity = pointer ? "0.95" : "";
@@ -67,7 +71,7 @@
       line.element.setAttribute("x2", b.xNow.toFixed(2));
       line.element.setAttribute("y2", b.yNow.toFixed(2));
     });
-    if (pointer && !reducedMotion) frame = requestAnimationFrame(render);
+    if (!reducedMotion && (pointer || unsettled)) frame = requestAnimationFrame(render);
   }
   function onMove(event) {
     pointer = { x: event.clientX, y: event.clientY };
