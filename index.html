@@ -22,6 +22,14 @@
     <div class="hero-art bouquet-scene" role="img" aria-label="Line-art illustration of a woman carrying a bouquet of flowers made from interface, code, and data motifs">
       <div class="bouquet-glow"></div>
       <svg class="bouquet-illustration" viewBox="0 0 620 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g class="doorway">
+          <path class="doorway-outer" d="M438 505V174 Q438 67 526 67 Q594 67 594 174V505"/>
+          <path class="doorway-inner" d="M457 505V179 Q457 91 526 91 Q575 91 575 179V505"/>
+          <path class="doorway-light" d="M477 505V183 Q477 111 526 111 Q556 111 556 183V505Z"/>
+          <path class="doorway-floor" d="M405 505H611"/>
+          <path class="doorway-step" d="M428 487H600"/>
+          <path class="doorway-sun" d="M526 151a17 17 0 1 0 0 .1"/>
+        </g>
         <g class="stems">
           <path d="M356 283 Q350 240 335 184 Q328 151 309 126"/>
           <path d="M357 283 Q373 232 385 188 Q397 151 398 126"/>
@@ -65,41 +73,34 @@
           <path class="ribbon" d="M349 278 Q331 291 322 307 Q344 304 357 289 Q369 307 392 308 Q380 288 357 278Z"/>
           <path class="ribbon-knot" d="M349 278 Q357 270 365 278 Q363 289 355 290 Q347 288 349 278Z"/>
         </g>
+
         <g class="walker editorial-walker">
-          <!-- Back leg: shaped as a continuous fashion-illustration silhouette -->
-          <g class="stride-back">
-            <path class="leg-fill" d="M246 348 Q258 352 270 360 L259 408 Q250 431 238 451 L219 476 Q209 486 196 483 Q190 481 197 474 L222 443 Q230 422 232 399Z"/>
-            <path class="shoe-fill" d="M198 473 Q211 474 222 466 Q229 470 225 479 Q216 491 194 490 Q186 488 190 481Z"/>
-            <path class="leg-line" d="M236 424 Q244 432 251 435"/>
+          <!-- A poised, side-facing figure in a flowing dress -->
+          <g class="back-leg">
+            <path class="leg-shape" d="M174 353 Q190 359 203 370 L196 421 Q191 450 177 477 L162 499 Q156 508 146 503 Q141 500 147 492 L164 464 Q174 437 169 411Z"/>
+            <path class="shoe-shape" d="M148 492 Q160 494 171 486 Q180 489 176 499 Q166 510 145 510 Q137 507 142 500Z"/>
           </g>
-          <!-- Front leg -->
-          <g class="stride-front">
-            <path class="leg-fill" d="M270 351 Q286 354 297 362 Q293 395 303 421 Q313 445 338 464 L355 477 Q363 484 355 489 Q343 493 326 481 L294 455 Q277 433 269 405Z"/>
-            <path class="shoe-fill" d="M338 465 Q350 470 359 478 Q368 486 358 491 Q343 493 326 481 L321 475Z"/>
-            <path class="leg-line" d="M294 417 Q285 425 281 437"/>
+          <g class="front-leg">
+            <path class="leg-shape" d="M207 359 Q225 359 239 369 Q235 405 244 435 Q252 462 276 485 L291 499 Q298 506 289 511 Q277 515 261 503 L232 477 Q213 452 207 420Z"/>
+            <path class="shoe-shape" d="M275 486 Q289 492 297 501 Q304 508 294 513 Q278 516 261 503 L256 496Z"/>
           </g>
-          <!-- Dress and torso: one tailored silhouette with a clear waist and flowing hem -->
-          <path class="dress-fill" d="M220 190 Q239 178 260 190 Q278 201 287 224 Q301 253 294 286 Q290 321 302 360 Q282 377 253 379 Q225 378 207 364 Q222 332 214 299 Q203 263 205 228 Q207 205 220 190Z"/>
-          <path class="dress-shape" d="M220 190 Q239 178 260 190 Q278 201 287 224 Q301 253 294 286 Q290 321 302 360 Q282 377 253 379 Q225 378 207 364 Q222 332 214 299 Q203 263 205 228 Q207 205 220 190Z"/>
-          <path class="dress-detail" d="M222 215 Q244 231 273 217 M218 359 Q256 372 296 357 M250 231 Q264 278 252 348"/>
-          <path class="waist-detail" d="M215 278 Q251 290 294 277"/>
-          <!-- Neck and head in profile, facing toward the bouquet -->
-          <path class="neck-fill" d="M237 164 Q244 182 238 198 L257 211 Q269 197 261 178Z"/>
-          <path class="head-fill" d="M217 119 Q219 91 245 82 Q271 78 284 98 Q296 117 287 143 Q281 161 263 172 Q248 178 235 164 Q222 151 217 119Z"/>
-          <path class="face-line" d="M276 128 Q284 131 289 127 M277 145 Q283 149 288 145 M268 157 Q276 160 282 155"/>
-          <!-- Hair is a deliberate swept-back shape, not a scribbled outline -->
-          <path class="hair-fill" d="M215 129 Q202 103 218 82 Q234 61 261 67 Q287 70 299 91 Q307 106 297 127 Q290 112 279 105 Q267 124 248 128 Q232 131 217 145Z"/>
-          <path class="hair-tail" d="M218 127 Q205 154 211 185 Q214 198 224 208 Q220 176 234 151Z"/>
-          <path class="hair-highlight" d="M222 96 Q241 72 266 82 M218 111 Q226 94 241 88"/>
-          <!-- Far arm swings naturally behind her -->
-          <path class="arm-fill" d="M215 211 Q201 231 194 255 Q188 279 197 300 L205 319 Q209 326 215 321 Q220 316 214 307 L209 287 Q207 266 220 245 L235 225Z"/>
-          <path class="hand-fill" d="M204 311 Q212 311 216 319 L220 333 Q219 341 212 340 Q205 338 203 329 L198 320Z"/>
-          <!-- Near arm reaches forward to hold the bouquet wrap -->
-          <path class="carry-arm" d="M270 214 Q292 219 309 237 Q326 254 344 273 L354 281"/>
-          <path class="carry-hand" d="M347 272 Q354 267 361 273 L370 282 Q374 288 369 293 Q364 297 358 290 L350 285 Q345 281 347 272Z"/>
-          <!-- Small garment and shoe accents -->
-          <path class="cuff-detail" d="M337 266 Q344 270 350 277"/>
-          <path class="hem-detail" d="M214 365 Q254 384 300 363"/>
+          <path class="dress-shape" d="M158 188 Q181 174 204 190 Q227 208 234 238 Q244 272 235 310 Q230 337 249 371 Q220 389 187 385 Q155 383 132 367 Q151 331 144 294 Q135 255 139 220 Q141 199 158 188Z"/>
+          <path class="dress-seam" d="M160 213 Q185 230 216 216 M146 360 Q190 383 243 366 M188 235 Q201 286 185 354"/>
+          <path class="waist-seam" d="M143 282 Q186 297 237 280"/>
+          <path class="neck-shape" d="M177 157 Q184 179 176 195 L197 207 Q210 192 201 171Z"/>
+          <path class="head-shape" d="M155 111 Q157 83 183 75 Q210 70 224 92 Q237 111 228 139 Q222 158 204 171 Q187 179 173 165 Q158 150 155 111Z"/>
+          <path class="face-line" d="M216 126 Q225 129 231 124 M216 144 Q224 148 230 143 M205 157 Q214 160 220 155"/>
+          <path class="hair-shape" d="M154 122 Q140 94 158 72 Q178 49 207 58 Q236 63 246 88 Q252 105 240 130 Q231 111 218 101 Q204 123 184 128 Q168 131 155 145Z"/>
+          <path class="hair-fall" d="M157 121 Q143 151 151 190 Q155 207 168 220 Q162 180 180 148Z"/>
+          <path class="hair-line" d="M162 89 Q181 64 211 72 M157 106 Q168 84 187 78"/>
+          <!-- Far arm reaches around the bouquet -->
+          <path class="arm-shape" d="M151 211 Q132 231 137 255 Q143 277 169 288 L312 303 Q326 304 335 296"/>
+          <path class="hand-shape" d="M328 289 Q338 284 345 292 L352 301 Q354 307 348 311 Q342 313 337 306 L328 301Z"/>
+          <!-- Near arm supports the bouquet from below -->
+          <path class="arm-shape" d="M222 218 Q245 226 263 245 Q282 265 301 283 L338 321"/>
+          <path class="hand-shape" d="M332 314 Q341 310 347 318 L357 328 Q360 334 354 338 Q348 340 342 333 L332 326Z"/>
+          <path class="sleeve-detail" d="M139 249 Q150 260 166 264 M255 246 Q270 262 283 278"/>
+          <path class="dress-hem" d="M136 369 Q189 394 247 371"/>
         </g>
       </svg>
     </div>
