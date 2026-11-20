@@ -431,3 +431,14 @@ body::before{background:#f04496}
 @media(prefers-reduced-motion:reduce){
   .bouquet-illustration .flower,.bouquet-illustration .stems,.bouquet-illustration .falling-petals .petal{animation:none!important}
 }
+
+
+/* The hero bouquet is intentionally static; remove all previous motion experiments. */
+.bouquet-illustration,
+.bouquet-illustration *,
+.bouquet-wrap,
+.bouquet-illustration .flower,
+.bouquet-illustration .stems{
+  animation:none!important;
+  transition:none!important;
+}
