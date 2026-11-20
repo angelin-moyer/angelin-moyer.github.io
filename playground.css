@@ -62,3 +62,15 @@
 @media(max-width:650px){.world-stage{min-height:0;padding:5px 0}.world-object{grid-template-columns:44px 1fr auto;padding:12px 8px;gap:10px}.object-icon{width:40px;height:39px}.object-name{font-size:10px}.object-hint{font-size:7px}.tiny-mascot{top:-72px}.tiny-mascot.guide-companion{right:5%;top:12px}}
 .tiny-mascot.is-travelling{position:fixed!important;left:auto!important;right:5%;top:43%;width:76px;transform:none!important;z-index:9999;pointer-events:none}.tiny-mascot.is-travelling svg{width:68px;height:86px}.tiny-mascot.is-travelling span{background:#3b2338;color:#f4c6dd;border-color:#a86c91}
 @media(max-width:650px){.tiny-mascot.is-travelling{right:3%;top:48%;width:62px}.tiny-mascot.is-travelling svg{width:56px;height:72px}}
+
+/* Simpler text-only destinations and a friendly introduction */
+.guide-instructions{margin:0 0 8px;color:#f5bfd7;font:500 12px 'Manrope',sans-serif;letter-spacing:.01em}
+.world-stage{min-height:0;padding:0;gap:0}
+.world-object{grid-template-columns:1fr auto;gap:16px;padding:17px 12px;border-color:#ffffff30}
+.object-name{grid-column:1;font:700 19px 'Sora',sans-serif;letter-spacing:.04em;color:#f6c2da;transition:color .2s}
+.object-hint{grid-column:2;font:9px 'DM Mono',monospace;color:#f2a184;letter-spacing:.1em}
+.world-object:hover .object-name,.world-object.is-active .object-name{color:#ff9b79}
+.world-object:hover,.world-object.is-active{background:#f5a4c51a}
+.world-footer{margin-top:10px}
+.tiny-mascot span{font:600 9px 'Manrope',sans-serif;letter-spacing:0;color:#fff4f8;background:#9f3f72;border-color:#e88ab5}
+@media(max-width:650px){.world-object{grid-template-columns:1fr auto;padding:15px 8px}.object-name{font-size:17px}.object-hint{font-size:8px}.guide-instructions{font-size:11px}}
