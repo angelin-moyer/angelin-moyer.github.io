@@ -36,3 +36,27 @@
 .world-stage.has-selection .tiny-mascot span{opacity:1}
 .world-object.is-active .object-name{color:#b9437c}
 @media(prefers-reduced-motion:reduce){.tiny-mascot svg{animation:none!important}}
+
+/* List-led guide navigation */
+.topbar nav{display:none!important}
+.interactive-world{max-width:520px}
+.world-heading{border:0;padding:0 0 18px;color:#f0b8d2}
+.world-heading span:last-child{opacity:.65}
+.world-stage{height:auto;min-height:410px;overflow:visible;border:0;border-radius:0;background:transparent;box-shadow:none;display:flex;flex-direction:column;justify-content:center;gap:0;padding:12px 0}
+.world-stage:before,.world-stage:after,.world-orbit,.world-paths{display:none!important}
+.world-object{position:relative;inset:auto!important;width:100%;min-width:0;display:grid;grid-template-columns:52px 1fr auto;grid-template-rows:auto;align-items:center;text-align:left;gap:15px;padding:13px 14px;border-top:1px solid #ffffff24;color:#fff8fc;transition:background .2s,transform .2s}
+.world-object:last-of-type{border-bottom:1px solid #ffffff24}
+.world-object:hover,.world-object.is-active{background:#ffffff10;transform:translateX(5px)}
+.object-icon{grid-row:1;grid-column:1;width:46px;height:44px;border-radius:12px;box-shadow:none}
+.object-name{grid-column:2;grid-row:1;font:600 12px 'DM Mono',monospace;letter-spacing:.13em;color:#fff8fc}
+.object-hint{grid-column:3;grid-row:1;font:8px 'DM Mono',monospace;color:#d6a9c2;white-space:nowrap}
+.tiny-mascot{left:calc(50% - 47px);top:-82px;width:82px;z-index:4}
+.tiny-mascot svg{width:76px;height:96px}
+.tiny-mascot span{font-size:8px;background:#3b2338;color:#f4c6dd;border-color:#a86c91}
+.world-footer{border-top:1px solid #ffffff24;color:#d4a8c2}
+.world-stage.has-selection .tiny-mascot span{opacity:1}
+.tiny-mascot.guide-companion{position:absolute;left:auto;right:6%;top:18px;width:70px;transform:none!important;z-index:3}
+.tiny-mascot.guide-companion svg{width:62px;height:78px}
+.tiny-mascot.guide-companion span{font-size:7px;padding:4px 7px}
+.section{position:relative}
+@media(max-width:650px){.world-stage{min-height:0;padding:5px 0}.world-object{grid-template-columns:44px 1fr auto;padding:12px 8px;gap:10px}.object-icon{width:40px;height:39px}.object-name{font-size:10px}.object-hint{font-size:7px}.tiny-mascot{top:-72px}.tiny-mascot.guide-companion{right:5%;top:12px}}
