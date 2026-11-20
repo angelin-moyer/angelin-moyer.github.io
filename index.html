@@ -22,80 +22,75 @@
     <div class="hero-art bouquet-scene" role="img" aria-label="Line-art illustration of a woman carrying a bouquet of flowers made from interface, code, and data motifs">
       <div class="bouquet-glow"></div>
       <svg class="bouquet-illustration" viewBox="0 0 620 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="stemAccent" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ed3b91"/><stop offset="1" stop-color="#ff875d"/></linearGradient>
-        </defs>
-        <g class="bouquet-ground">
-          <path d="M76 493 C188 478 390 510 548 484" />
-          <path d="M120 511 C222 500 402 520 504 504" />
+        <g class="stems">
+          <path d="M356 283 Q350 240 335 184 Q328 151 309 126"/>
+          <path d="M357 283 Q373 232 385 188 Q397 151 398 126"/>
+          <path d="M358 283 Q411 250 447 218 Q466 198 477 176"/>
+          <path d="M355 283 Q319 242 281 211 Q265 194 258 171"/>
+          <path d="M358 283 Q395 267 430 263 Q458 258 483 239"/>
+          <path d="M352 266 Q330 239 314 226 Q299 214 282 216" class="leaf-stem"/>
+          <path d="M379 236 Q397 218 420 217 Q407 240 379 236" class="leaf"/>
+          <path d="M330 211 Q309 190 287 194 Q303 217 330 211" class="leaf"/>
         </g>
-        <g class="bouquet-sprigs">
-          <path d="M350 204 Q390 143 432 103 M350 204 Q407 180 476 169 M348 206 Q390 221 449 235 M345 204 Q340 130 357 91 M352 207 Q300 160 294 116 M351 208 Q282 214 248 187" />
-          <path d="M387 153 q-26 -23 -42 -9 q16 25 42 9 M416 181 q25 -28 48 -18 q-13 28 -48 18 M390 221 q-14 26 -37 24 q4 -28 37 -24 M342 145 q-30 -12 -42 5 q24 18 42 -5" />
+        <g class="flower flower-code">
+          <path class="petals" d="M309 126 C291 117 283 99 294 87 C304 76 319 85 322 101 C334 86 352 86 359 99 C366 113 350 126 334 127 C347 140 343 158 329 163 C315 167 305 151 309 136 C293 147 276 139 278 124 C280 110 296 108 309 126Z"/>
+          <path class="flower-center" d="M310 119 Q325 108 340 121 Q344 137 328 145 Q312 142 310 119Z"/>
+          <path class="flower-tech" d="M318 124l-5 5 5 5 M335 124l5 5-5 5 M329 121l-4 16"/>
         </g>
-        <g class="tech-bloom bloom-code">
-          <path d="M294 116 l-18 -18 18 -18 M294 116 l-18 18 18 18 M312 98 l-9 36" />
-          <circle cx="294" cy="116" r="34"/>
-          <path d="M283 110h22 M283 121h15"/>
-          <circle class="bloom-core" cx="294" cy="116" r="5"/>
+        <g class="flower flower-interface">
+          <path class="petals" d="M398 126 C383 116 381 99 393 90 C405 81 418 91 419 106 C431 94 449 99 452 113 C455 128 439 137 424 133 C433 150 424 165 410 165 C395 164 390 148 398 135 C380 140 368 128 375 114 C381 102 392 108 398 126Z"/>
+          <path class="flower-center" d="M397 116 Q413 105 428 117 L428 137 Q412 148 397 136Z"/>
+          <path class="flower-tech" d="M400 122h24 M400 127h24 M400 132h15 M405 117h2 M411 117h2"/>
         </g>
-        <g class="tech-bloom bloom-interface">
-          <circle cx="357" cy="91" r="31"/>
-          <rect x="342" y="77" width="30" height="26" rx="4"/>
-          <path d="M342 84h30 M349 80h1 M354 80h1 M350 92h14 M350 98h9"/>
-          <circle class="bloom-core" cx="357" cy="91" r="4"/>
+        <g class="flower flower-network">
+          <path class="petals" d="M477 176 C460 164 460 147 473 139 C486 132 499 143 498 158 C513 148 529 157 528 172 C527 187 510 193 497 185 C501 204 488 216 474 209 C460 202 462 185 473 178 C455 181 446 166 456 154 C465 144 475 157 477 176Z"/>
+          <path class="flower-center" d="M474 166 Q490 154 505 168 Q508 183 492 192 Q477 188 474 166Z"/>
+          <path class="flower-tech" d="M481 174l9 -9 10 10 M490 165v19 M480 175h21"/>
+          <circle class="node-dot" cx="481" cy="174" r="2.5"/><circle class="node-dot" cx="490" cy="165" r="2.5"/><circle class="node-dot" cx="500" cy="175" r="2.5"/>
         </g>
-        <g class="tech-bloom bloom-nodes">
-          <circle cx="432" cy="103" r="29"/>
-          <path d="M416 107l14 -14 17 15 M430 93v25 M416 107h31"/>
-          <circle cx="416" cy="107" r="4"/><circle cx="430" cy="93" r="4"/><circle cx="447" cy="108" r="4"/><circle cx="430" cy="118" r="4"/>
-          <circle class="bloom-core" cx="432" cy="103" r="3"/>
+        <g class="flower flower-chart">
+          <path class="petals" d="M483 239 C468 226 471 210 484 204 C497 198 509 210 506 225 C521 216 536 227 533 241 C530 255 513 259 502 249 C503 267 489 277 476 268 C463 259 468 244 480 238 C463 238 455 223 466 213 C477 204 485 220 483 239Z"/>
+          <path class="flower-center" d="M481 230 Q496 218 510 231 L507 250 Q493 259 480 246Z"/>
+          <path class="flower-tech" d="M485 246v-8h5v8 M493 246v-15h5v15 M501 246v-11h5v11"/>
         </g>
-        <g class="tech-bloom bloom-chart">
-          <circle cx="476" cy="169" r="30"/>
-          <path d="M459 183v-13h7v13 M470 183v-25h7v25 M481 183v-19h7v19 M455 187h37"/>
-          <circle class="bloom-core" cx="476" cy="169" r="4"/>
-        </g>
-        <g class="tech-bloom bloom-data">
-          <circle cx="449" cy="235" r="27"/>
-          <path d="M449 214v42 M428 235h42 M434 220l30 30 M464 220l-30 30"/>
-          <circle class="bloom-core" cx="449" cy="235" r="5"/>
+        <g class="flower flower-data">
+          <path class="petals" d="M258 171 C241 159 244 142 257 135 C270 128 282 140 280 155 C295 145 311 155 309 170 C307 185 290 191 278 181 C280 199 266 210 253 201 C240 192 245 177 256 170 C239 172 230 157 241 146 C251 137 260 152 258 171Z"/>
+          <path class="flower-center" d="M256 160 Q271 149 285 162 L283 181 Q269 190 255 177Z"/>
+          <path class="flower-tech" d="M270 157v27 M257 170h27 M261 161l18 18 M279 161l-18 18"/>
         </g>
         <g class="bouquet-wrap">
-          <path d="M331 191 Q355 232 385 267 Q399 284 410 303" />
-          <path d="M315 205 Q347 252 370 279 Q391 304 397 322" />
-          <path d="M300 217 Q329 267 354 292 Q371 311 382 332" />
-          <path d="M315 205 Q352 210 382 196 M331 191 Q367 180 392 160" />
-          <path class="wrap-accent" d="M316 219 Q347 236 369 227 L390 267 Q361 281 341 264 Z"/>
-          <path d="M341 264 Q349 279 350 294 M369 227 Q383 241 390 267"/>
+          <path class="wrap-back" d="M322 258 Q358 246 393 258 L379 331 Q358 344 338 329Z"/>
+          <path class="wrap-front" d="M322 258 Q357 273 393 258 L374 318 Q357 330 340 317Z"/>
+          <path class="wrap-fold" d="M322 258 Q350 269 393 258 M340 317 Q358 326 374 318"/>
+          <path class="ribbon" d="M349 278 Q331 291 322 307 Q344 304 357 289 Q369 307 392 308 Q380 288 357 278Z"/>
+          <path class="ribbon-knot" d="M349 278 Q357 270 365 278 Q363 289 355 290 Q347 288 349 278Z"/>
         </g>
-        <g class="woman">
-          <g class="woman-back-leg">
-            <path d="M266 384 Q254 420 231 455 Q218 474 198 486"/>
-            <path d="M198 486 q-18 8 -31 1 q-3 -7 9 -11 l22 -8"/>
+        <g class="walker">
+          <g class="back-leg">
+            <path d="M267 366 Q251 396 239 426 Q233 444 218 469"/>
+            <path d="M218 469 Q205 478 193 482 Q184 486 189 491 Q211 495 228 482 L239 453"/>
+            <path class="leg-detail" d="M239 426 Q249 432 252 441"/>
           </g>
-          <g class="woman-front-leg">
-            <path d="M292 382 Q306 422 320 451 Q333 474 353 488"/>
-            <path d="M353 488 q17 2 25 13 q-1 8 -15 5 l-25 -7"/>
+          <g class="front-leg">
+            <path d="M282 366 Q291 399 302 424 Q313 447 335 467"/>
+            <path d="M335 467 Q350 470 359 481 Q365 489 356 491 Q337 489 323 480 L305 454"/>
+            <path class="leg-detail" d="M302 424 Q291 433 289 443"/>
           </g>
-          <path class="woman-dress" d="M251 224 Q280 212 307 230 Q322 261 320 300 Q317 343 306 393 Q278 408 246 392 Q249 352 237 315 Q228 276 251 224Z"/>
-          <path class="dress-detail" d="M251 238 Q278 251 309 236 M248 387 Q277 398 307 388 M278 257 Q287 305 278 371"/>
-          <path class="woman-neck" d="M272 206 Q275 224 267 235"/>
-          <path class="woman-head" d="M245 151 Q242 120 265 108 Q295 96 313 121 Q328 144 314 177 Q304 197 281 203 Q257 196 245 151Z"/>
-          <path class="woman-hair" d="M244 157 Q226 119 252 96 Q279 73 309 95 Q334 112 321 154 Q317 137 306 127 Q295 145 273 148 Q260 151 244 157Z"/>
-          <path class="hair-flow" d="M247 145 Q232 183 249 218 M258 151 Q250 184 260 198 M309 133 Q326 170 308 196"/>
-          <path class="face-detail" d="M300 161 q7 4 13 0 M292 176 q8 5 15 0"/>
-          <path class="woman-arm" d="M300 240 Q326 242 338 219 Q347 205 354 190"/>
-          <path class="woman-hand" d="M354 190 q-5 -8 1 -14 q5 -2 7 5 l2 8 q8 -5 12 0 q2 5 -5 8 l-13 7"/>
-          <path class="woman-other-arm" d="M253 244 Q231 272 224 305 Q218 328 235 339"/>
-          <path class="woman-hand" d="M235 339 q-8 7 -15 0 q-3 -6 4 -10"/>
-          <path class="dress-fold" d="M239 292 Q266 311 303 302 M247 333 Q270 349 309 337"/>
-          <path class="woman-collar" d="M264 224 l16 20 17 -17"/>
-        </g>
-        <g class="accent-details">
-          <path d="M191 164 q-12 -12 -23 0 q11 13 23 0 M499 282 q15 -13 27 0 q-13 15 -27 0"/>
-          <path d="M184 205v18 M175 214h18 M514 115v20 M504 125h20"/>
-          <circle cx="207" cy="124" r="4"/><circle cx="520" cy="206" r="5"/><circle cx="146" cy="300" r="3"/>
+          <g class="upper-body">
+            <path class="dress" d="M250 218 Q270 207 294 220 Q314 240 312 273 Q311 312 300 369 Q280 382 251 370 Q248 337 237 302 Q228 265 250 218Z"/>
+            <path class="dress-seam" d="M250 235 Q274 249 302 232 M251 366 Q276 378 300 366 M278 252 Q287 302 276 353"/>
+            <path class="neck" d="M266 194 Q271 211 264 222"/>
+            <path class="head" d="M242 145 Q239 116 259 101 Q283 85 304 104 Q322 121 315 151 Q311 178 291 191 Q270 198 253 179 Q246 165 242 145Z"/>
+            <path class="hair" d="M241 153 Q226 126 238 104 Q250 80 278 78 Q306 76 320 98 Q333 118 319 151 Q312 132 301 123 Q290 140 270 143 Q255 146 241 153Z"/>
+            <path class="hair-strand" d="M244 141 Q231 171 244 204 Q250 215 254 218 M255 147 Q248 174 261 190 M308 131 Q324 162 311 190"/>
+            <path class="face" d="M298 153 q6 3 11 -1 M291 169 q7 4 13 0 M304 181 q-5 5 -11 3"/>
+            <path class="front-arm" d="M296 239 Q318 245 333 263 Q344 276 356 282"/>
+            <path class="hand" d="M352 279 Q357 274 362 278 L369 286 Q373 291 368 295 Q364 297 359 291 L354 288"/>
+            <path class="back-arm" d="M251 241 Q235 264 229 286 Q225 302 238 317"/>
+            <path class="hand" d="M238 317 Q244 317 246 323 Q245 330 238 329 Q231 327 229 322"/>
+            <path class="collar" d="M263 219 Q276 239 291 218"/>
+            <path class="dress-fold" d="M240 293 Q264 307 301 298"/>
+          </g>
         </g>
       </svg>
     </div>
