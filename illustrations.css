@@ -231,8 +231,6 @@ body::before{background:#f04496}
 .woman-back-leg{animation-delay:-.8s}
 .woman{animation:woman-bob .8s ease-in-out infinite alternate;transform-origin:50% 70%}
 .bouquet-wrap{transform-box:fill-box;transform-origin:50% 50%;animation:bouquet-sway 2.4s ease-in-out infinite}
-.bouquet-caption{position:absolute;z-index:2;right:2%;bottom:3%;font:10px 'DM Mono',monospace;letter-spacing:.14em;color:#783354}
-.bouquet-caption span{color:#e13c8b}
 .accent-details path{fill:none;stroke:#ed3b91;stroke-width:2;stroke-linecap:round;opacity:.85}
 .accent-details circle{fill:#ff805b}
 @keyframes bloom-in{from{opacity:0;scale:.45}to{opacity:1;scale:1}}
@@ -241,5 +239,5 @@ body::before{background:#f04496}
 @keyframes woman-bob{from{translate:0 0}to{translate:0 -2px}}
 @keyframes bouquet-sway{0%,100%{rotate:-1deg}50%{rotate:2deg}}
 @media(max-width:900px){.hero-art.bouquet-scene{max-width:520px}}
-@media(max-width:650px){.hero-art.bouquet-scene{width:100%;max-width:470px;margin:0 auto;transform:translateX(-1%)}.bouquet-caption{font-size:8px;right:0}}
+@media(max-width:650px){.hero-art.bouquet-scene{width:100%;max-width:470px;margin:0 auto;transform:translateX(-1%)}}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration *, .bouquet-wrap,.woman,.woman-front-leg,.woman-back-leg{animation:none!important}}
