@@ -241,3 +241,44 @@ body::before{background:#f04496}
 @media(max-width:900px){.hero-art.bouquet-scene{max-width:520px}}
 @media(max-width:650px){.hero-art.bouquet-scene{width:100%;max-width:470px;margin:0 auto;transform:translateX(-1%)}}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration *, .bouquet-wrap,.woman,.woman-front-leg,.woman-back-leg{animation:none!important}}
+
+
+/* Refined figure study: full-body gait and botanical technical blooms */
+.bouquet-illustration .stems path{fill:none;stroke:#63304d;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .stems .leaf-stem{stroke:#e13c8b;stroke-width:1.7}
+.bouquet-illustration .stems .leaf{fill:#ff9bc4;fill-opacity:.45;stroke:#a63d70;stroke-width:1.7}
+.bouquet-illustration .flower{transform-box:fill-box;transform-origin:center;animation:flower-open .8s cubic-bezier(.2,.8,.2,1) both}
+.bouquet-illustration .flower-code{animation-delay:.04s}.bouquet-illustration .flower-interface{animation-delay:.15s}.bouquet-illustration .flower-network{animation-delay:.26s}.bouquet-illustration .flower-chart{animation-delay:.37s}.bouquet-illustration .flower-data{animation-delay:.48s}
+.bouquet-illustration .petals{fill:#ff9bc5;fill-opacity:.78;stroke:#8e315e;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .flower:nth-of-type(even) .petals{fill:#ffb08d}
+.bouquet-illustration .flower-center{fill:#fff4f9;stroke:#8e315e;stroke-width:1.7;stroke-linejoin:round}
+.bouquet-illustration .flower-tech{fill:none;stroke:#63264a;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .node-dot{fill:#e83d8e;stroke:#fff4f9;stroke-width:1}
+.bouquet-illustration .bouquet-wrap{transform-box:fill-box;transform-origin:50% 15%;animation:held-bouquet 3.1s ease-in-out infinite}
+.bouquet-illustration .wrap-back{fill:#f8c4d9;stroke:#8e315e;stroke-width:2}
+.bouquet-illustration .wrap-front{fill:#ff8fbb;fill-opacity:.65;stroke:#8e315e;stroke-width:2}
+.bouquet-illustration .wrap-fold{fill:none;stroke:#d83b85;stroke-width:1.5}
+.bouquet-illustration .ribbon{fill:#ffad85;stroke:#8e315e;stroke-width:1.7;stroke-linejoin:round}
+.bouquet-illustration .ribbon-knot{fill:#f6d1e0;stroke:#8e315e;stroke-width:1.5}
+.bouquet-illustration .walker{transform-box:fill-box;transform-origin:50% 90%;animation:walking-body 1.15s ease-in-out infinite}
+.bouquet-illustration .upper-body{transform-box:fill-box;transform-origin:50% 90%;animation:torso-sway 1.15s ease-in-out infinite}
+.bouquet-illustration .front-leg,.bouquet-illustration .back-leg{transform-box:fill-box;transform-origin:50% 5%;animation:stride 1.15s ease-in-out infinite}
+.bouquet-illustration .back-leg{animation-delay:-.575s}
+.bouquet-illustration .upper-body>path{stroke:#45142f;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .dress{fill:#fff5fa;fill-opacity:.8;stroke-width:3}
+.bouquet-illustration .dress-seam,.bouquet-illustration .dress-fold{fill:none;stroke:#c7357d;stroke-width:1.5}
+.bouquet-illustration .head{fill:#fff1f7;stroke:#45142f;stroke-width:2.8}
+.bouquet-illustration .hair{fill:#45142f;stroke:#45142f;stroke-width:2}
+.bouquet-illustration .hair-strand{fill:none;stroke:#ff9bc5;stroke-width:1.5;stroke-linecap:round}
+.bouquet-illustration .face{fill:none;stroke:#6e3150;stroke-width:1.6;stroke-linecap:round}
+.bouquet-illustration .neck,.bouquet-illustration .hand{fill:#fff1f7;stroke:#45142f;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .front-arm,.bouquet-illustration .back-arm{fill:none;stroke:#45142f;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .collar{fill:none;stroke:#d83b85;stroke-width:2}
+.bouquet-illustration .front-leg,.bouquet-illustration .back-leg{fill:none;stroke:#45142f;stroke-width:8;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .leg-detail{stroke:#d83b85;stroke-width:1.5;fill:none}
+@keyframes flower-open{from{opacity:0;scale:.72}to{opacity:1;scale:1}}
+@keyframes walking-body{0%,100%{translate:0 0}50%{translate:0 -3px}}
+@keyframes torso-sway{0%,100%{rotate:-1deg}50%{rotate:1.5deg}}
+@keyframes stride{0%,100%{rotate:-10deg}50%{rotate:10deg}}
+@keyframes held-bouquet{0%,100%{rotate:-1.2deg}50%{rotate:1.8deg}}
+@media(prefers-reduced-motion:reduce){.bouquet-illustration *{animation:none!important}}
