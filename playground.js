@@ -7,7 +7,7 @@
   if(navigating)return;
   const destination=document.getElementById(button.dataset.destination);if(!destination)return;
   navigating=true;
-  if(mascot.parentElement!==stage){stage.appendChild(mascot);mascot.classList.remove('guide-companion');mascot.style.transform='';}
+  if(mascot.parentElement!==stage){stage.appendChild(mascot);mascot.classList.remove('guide-companion','is-travelling');mascot.style.transform='';}
   buttons.forEach(b=>b.classList.toggle('is-active',b===button));
   const target=button.getBoundingClientRect(),m=mascot.getBoundingClientRect();
   const x=target.left+target.width/2-(m.left+m.width/2);
@@ -16,13 +16,15 @@
   mascot.classList.remove('is-hopping');void mascot.offsetWidth;mascot.classList.add('is-hopping');
   mascot.querySelector('span').textContent='this way!';
   window.setTimeout(function(){
+   mascot.classList.remove('is-hopping');mascot.classList.add('is-travelling');mascot.style.transform='';
    destination.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
    history.replaceState(null,'','#'+destination.id);
-   window.setTimeout(function(){
-    destination.appendChild(mascot);mascot.classList.add('guide-companion');
-    mascot.classList.remove('is-hopping');mascot.style.transform='';
-    mascot.querySelector('span').textContent='we made it!';navigating=false;
-   },850);
+   const finish=function(){
+    destination.appendChild(mascot);mascot.classList.remove('is-travelling');mascot.classList.add('guide-companion');
+    mascot.style.transform='';mascot.querySelector('span').textContent='we made it!';navigating=false;
+   };
+   if('onscrollend' in window){window.addEventListener('scrollend',finish,{once:true});window.setTimeout(finish,2200);}
+   else window.setTimeout(finish,1500);
   },420);
  }
  buttons.forEach(button=>button.addEventListener('click',function(){go(button);}));
