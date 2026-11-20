@@ -1,87 +1,88 @@
 (() => {
-  const grid = document.querySelector(".interactive-grid");
-  const visual = document.querySelector(".grid-visual");
-  if (!grid || !visual) return;
+  const hero = document.querySelector(".hero");
+  const visual = document.querySelector(".network-visual");
+  const svg = document.querySelector(".interface-network");
+  if (!hero || !visual || !svg) return;
+
+  // Start the headline reveal after the page has had a frame to paint.
+  requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add("hero-ready")));
+
   const ns = "http://www.w3.org/2000/svg";
-  const count = 9;
-  const spacing = 52;
-  const points = [];
-  const lines = [];
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const finePointer = window.matchMedia("(pointer: fine)").matches;
-  function makeLine(a, b) {
-    const line = document.createElementNS(ns, "line");
-    line.setAttribute("class", "grid-links");
-    grid.appendChild(line);
-    lines.push({ element: line, a, b });
-  }
-  for (let row = 0; row < count; row += 1) {
-    for (let col = 0; col < count; col += 1) {
-      const circle = document.createElementNS(ns, "circle");
-      circle.setAttribute("class", "grid-point");
-      circle.setAttribute("r", (row + col) % 4 === 0 ? "3.2" : "2.2");
-      grid.appendChild(circle);
-      points.push({ element: circle, x: 16 + col * spacing, y: 16 + row * spacing, xNow: 16 + col * spacing, yNow: 16 + row * spacing });
-    }
-  }
-  points.forEach((point, index) => {
-    const row = Math.floor(index / count);
-    const col = index % count;
-    if (col < count - 1) makeLine(index, index + 1);
-    if (row < count - 1) makeLine(index, index + count);
+  const points = [
+    {x:92,y:112,r:5},{x:190,y:55,r:3},{x:320,y:75,r:6},
+    {x:405,y:165,r:4},{x:390,y:315,r:6},{x:290,y:410,r:3},
+    {x:115,y:370,r:5},{x:48,y:245,r:3},{x:235,y:240,r:5,core:true},
+    {x:150,y:190,r:3},{x:330,y:220,r:4},{x:210,y:350,r:3}
+  ];
+  const links = [[0,1],[1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,0],[0,9],[9,8],[8,10],[10,3],[8,11],[11,6],[1,9],[2,10],[4,10],[5,11]];
+  const lineEls = [];
+  const nodeEls = [];
+
+  links.forEach(([a,b], index) => {
+    const path = document.createElementNS(ns,"path");
+    path.setAttribute("class","network-link");
+    path.style.animationDelay = (index * -0.7) + "s";
+    svg.appendChild(path);
+    lineEls.push({element:path,a,b});
   });
+  points.forEach((point) => {
+    const circle = document.createElementNS(ns,"circle");
+    circle.setAttribute("r",point.r);
+    circle.setAttribute("class","network-node" + (point.core ? " core" : point.r >= 5 ? " large" : ""));
+    svg.appendChild(circle);
+    nodeEls.push({element:circle,...point,xNow:point.x,yNow:point.y});
+  });
+
   let pointer = null;
   let frame = 0;
-  function render() {
-    let unsettled = false;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const finePointer = window.matchMedia("(pointer: fine)").matches;
+
+  function draw() {
     frame = 0;
+    let moving = false;
     const rect = visual.getBoundingClientRect();
-    const scaleX = 480 / rect.width;
-    const scaleY = 480 / rect.height;
-    const px = pointer ? (pointer.x - rect.left) * scaleX : -1000;
-    const py = pointer ? (pointer.y - rect.top) * scaleY : -1000;
-    points.forEach((point) => {
-      let dx = 0;
-      let dy = 0;
+    const sx = 480 / rect.width;
+    const sy = 480 / rect.height;
+    const px = pointer ? (pointer.x - rect.left) * sx : -1000;
+    const py = pointer ? (pointer.y - rect.top) * sy : -1000;
+
+    nodeEls.forEach((node) => {
+      let tx = node.x;
+      let ty = node.y;
       if (pointer && finePointer && !reducedMotion) {
-        const vx = point.x - px;
-        const vy = point.y - py;
-        const distance = Math.sqrt(vx * vx + vy * vy);
-        const radius = 112;
-        if (distance < radius && distance > 0) {
-          const strength = (1 - distance / radius) * 17;
-          dx = (vx / distance) * strength;
-          dy = (vy / distance) * strength;
+        const dx = node.x - px;
+        const dy = node.y - py;
+        const d = Math.sqrt(dx*dx + dy*dy);
+        if (d < 125 && d > 0) {
+          const force = (1 - d/125) * 13;
+          tx += dx/d * force;
+          ty += dy/d * force;
         }
       }
-      const targetX = point.x + dx;
-      const targetY = point.y + dy;
-      point.xNow += (targetX - point.xNow) * 0.22;
-      point.yNow += (targetY - point.yNow) * 0.22;
-      if (Math.abs(targetX - point.xNow) > 0.25 || Math.abs(targetY - point.yNow) > 0.25) unsettled = true;
-      point.element.setAttribute("cx", point.xNow.toFixed(2));
-      point.element.setAttribute("cy", point.yNow.toFixed(2));
-      point.element.style.opacity = pointer ? "0.95" : "";
+      node.xNow += (tx-node.xNow)*.16;
+      node.yNow += (ty-node.yNow)*.16;
+      if (Math.abs(tx-node.xNow)>.2 || Math.abs(ty-node.yNow)>.2) moving = true;
+      node.element.setAttribute("cx",node.xNow);
+      node.element.setAttribute("cy",node.yNow);
     });
-    lines.forEach((line) => {
-      const a = points[line.a];
-      const b = points[line.b];
-      line.element.setAttribute("x1", a.xNow.toFixed(2));
-      line.element.setAttribute("y1", a.yNow.toFixed(2));
-      line.element.setAttribute("x2", b.xNow.toFixed(2));
-      line.element.setAttribute("y2", b.yNow.toFixed(2));
+    lineEls.forEach((line) => {
+      const a=nodeEls[line.a], b=nodeEls[line.b];
+      const mx=(a.xNow+b.xNow)/2, my=(a.yNow+b.yNow)/2;
+      const bend=(line.a+line.b)%2===0 ? -13 : 13;
+      line.element.setAttribute("d", "M "+a.xNow+" "+a.yNow+" Q "+(mx+bend)+" "+(my-bend)+" "+b.xNow+" "+b.yNow);
     });
-    if (!reducedMotion && (pointer || unsettled)) frame = requestAnimationFrame(render);
+    if (!reducedMotion && (pointer || moving)) frame=requestAnimationFrame(draw);
   }
-  function onMove(event) {
-    pointer = { x: event.clientX, y: event.clientY };
-    if (!frame) frame = requestAnimationFrame(render);
+  function move(event) {
+    pointer={x:event.clientX,y:event.clientY};
+    if (!frame) frame=requestAnimationFrame(draw);
   }
-  function onLeave() {
-    pointer = null;
-    if (!frame) frame = requestAnimationFrame(render);
+  function leave() {
+    pointer=null;
+    if (!frame) frame=requestAnimationFrame(draw);
   }
-  visual.addEventListener("pointermove", onMove);
-  visual.addEventListener("pointerleave", onLeave);
-  render();
+  visual.addEventListener("pointermove",move);
+  visual.addEventListener("pointerleave",leave);
+  draw();
 })();
