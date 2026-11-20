@@ -26,3 +26,13 @@
 @media(max-width:900px){.interactive-world{max-width:470px}.world-stage{height:390px}}
 @media(max-width:600px){.interactive-world{max-width:390px}.world-stage{height:350px}.world-object{min-width:88px;padding:5px}.object-icon{width:54px;height:52px;border-radius:15px}.object-name{font-size:9px}.object-hint{font-size:7px}.world-reveal{width:58%;padding:13px;min-height:122px}.world-reveal strong{font-size:17px}.world-reveal p{font-size:10px}.world-heading,.world-footer{font-size:8px}}
 @media(prefers-reduced-motion:reduce){.tiny-mascot,.tiny-mascot svg,.world-object,.world-reveal{animation:none!important;transition:none!important}}
+/* Guide-first navigation refinement */
+.tiny-mascot{transform-origin:50% 85%;will-change:transform}
+.tiny-mascot svg{animation:mascot-guide-bounce 2.1s ease-in-out infinite}
+@keyframes mascot-guide-bounce{0%,100%{transform:translateY(0) rotate(-1deg)}42%{transform:translateY(-9px) rotate(2deg)}56%{transform:translateY(-5px) rotate(-2deg)}}
+.world-reveal.guide-note{width:160px;min-height:0;left:50%;top:auto;bottom:14px;padding:10px 13px;text-align:center;border-radius:14px;z-index:6}
+.world-reveal.guide-note strong{font-size:15px;margin:5px 0 3px}
+.world-reveal.guide-note p{font-size:9px}
+.world-stage.has-selection .tiny-mascot span{opacity:1}
+.world-object.is-active .object-name{color:#b9437c}
+@media(prefers-reduced-motion:reduce){.tiny-mascot svg{animation:none!important}}
