@@ -282,3 +282,30 @@ body::before{background:#f04496}
 @keyframes stride{0%,100%{rotate:-10deg}50%{rotate:10deg}}
 @keyframes held-bouquet{0%,100%{rotate:-1.2deg}50%{rotate:1.8deg}}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration *{animation:none!important}}
+
+
+/* Editorial figure redraw: cohesive fashion silhouette, aligned to bouquet */
+.bouquet-illustration .editorial-walker{transform-box:fill-box;transform-origin:50% 88%;animation:editorial-bob 1.3s ease-in-out infinite}
+.bouquet-illustration .editorial-walker path{vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-linejoin:round}
+.bouquet-illustration .leg-fill{fill:#f5b5cf;stroke:#54213f;stroke-width:2.2}
+.bouquet-illustration .shoe-fill{fill:#54213f;stroke:#54213f;stroke-width:1.8}
+.bouquet-illustration .leg-line{fill:none;stroke:#bd4b80;stroke-width:1.4}
+.bouquet-illustration .stride-front,.bouquet-illustration .stride-back{transform-box:fill-box;transform-origin:50% 8%;animation:editorial-stride 1.3s ease-in-out infinite}
+.bouquet-illustration .stride-back{animation-delay:-.65s}
+.bouquet-illustration .dress-fill{fill:#fff0f7;stroke:#54213f;stroke-width:2.6}
+.bouquet-illustration .dress-shape{fill:none;stroke:#54213f;stroke-width:2.6}
+.bouquet-illustration .dress-detail,.bouquet-illustration .waist-detail,.bouquet-illustration .hem-detail{fill:none;stroke:#d63b83;stroke-width:1.45}
+.bouquet-illustration .neck-fill,.bouquet-illustration .head-fill{fill:#f8c7d7;stroke:#54213f;stroke-width:2.2}
+.bouquet-illustration .face-line{fill:none;stroke:#71334e;stroke-width:1.35}
+.bouquet-illustration .hair-fill{fill:#54213f;stroke:#54213f;stroke-width:2}
+.bouquet-illustration .hair-tail{fill:#54213f;stroke:#54213f;stroke-width:1.6}
+.bouquet-illustration .hair-highlight{fill:none;stroke:#d77a9f;stroke-width:1.35}
+.bouquet-illustration .arm-fill{fill:#f8c7d7;stroke:#54213f;stroke-width:2.1}
+.bouquet-illustration .hand-fill{fill:#f8c7d7;stroke:#54213f;stroke-width:2}
+.bouquet-illustration .carry-arm{fill:none;stroke:#f8c7d7;stroke-width:11}
+.bouquet-illustration .carry-arm{stroke:#54213f;stroke-width:2.4}
+.bouquet-illustration .carry-hand{fill:#f8c7d7;stroke:#54213f;stroke-width:2}
+.bouquet-illustration .cuff-detail{fill:none;stroke:#d63b83;stroke-width:1.4}
+@keyframes editorial-bob{0%,100%{translate:0 0}50%{translate:0 -2px}}
+@keyframes editorial-stride{0%,100%{rotate:-4deg}50%{rotate:5deg}}
+@media(prefers-reduced-motion:reduce){.bouquet-illustration .editorial-walker,.bouquet-illustration .stride-front,.bouquet-illustration .stride-back{animation:none!important}}
