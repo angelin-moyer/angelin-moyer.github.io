@@ -442,3 +442,20 @@ body::before{background:#f04496}
   animation:none!important;
   transition:none!important;
 }
+
+
+/* Tendril project illustration */
+.project-visual .art-tendril{height:350px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#fff7fb 0%,#ffe1ee 48%,#ffc4d9 100%);border:1px solid #e9a2c1}
+.art-tendril:before{content:"";position:absolute;inset:0;background-image:radial-gradient(#d94b9130 1px,transparent 1px);background-size:18px 18px;opacity:.8}
+.tendril-sun{position:absolute;width:112px;height:112px;border-radius:50%;background:#ffad83;right:15%;top:13%;opacity:.85;box-shadow:0 0 0 15px #ffad8325}
+.tendril-stem{position:absolute;z-index:2;bottom:100px;width:3px;background:#557e58;border-radius:5px;transform-origin:bottom center}
+.tendril-stem i,.tendril-stem b{position:absolute;display:block;width:37px;height:20px;background:#78a77c;border:1px solid #4f8058;border-radius:100% 0 100% 0}
+.tendril-stem i{left:-34px;top:32%;transform:rotate(15deg)}
+.tendril-stem b{left:1px;top:55%;transform:rotate(195deg)}
+.tendril-stem.stem-one{height:135px;left:48%;transform:rotate(-9deg)}
+.tendril-stem.stem-two{height:105px;left:39%;transform:rotate(-25deg)}
+.tendril-stem.stem-three{height:118px;left:57%;transform:rotate(17deg)}
+.tendril-stem.stem-two i,.tendril-stem.stem-three b{background:#9cbd8d}
+.tendril-pot{position:absolute;z-index:3;left:50%;bottom:66px;transform:translateX(-50%);width:112px;height:75px;background:linear-gradient(110deg,#e96d9e,#f49ab9);clip-path:polygon(7% 0,93% 0,80% 100%,20% 100%);filter:drop-shadow(0 8px 5px #9f456b35)}
+.tendril-pot span{position:absolute;left:0;right:0;top:0;height:12px;background:#b94c7b}
+.tendril-label{position:absolute;bottom:23px;left:0;right:0;text-align:center;font:10px 'DM Mono',monospace;letter-spacing:.15em;color:#8a365e}
