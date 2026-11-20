@@ -339,3 +339,21 @@ body::before{background:#f04496}
 .bouquet-illustration .bouquet-wrap{transform-origin:50% 15%;animation:held-bouquet 2.8s ease-in-out infinite}
 @keyframes doorway-arrive{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:translateX(0)}}
 @media(prefers-reduced-motion:reduce){.bouquet-illustration .doorway,.bouquet-illustration .editorial-walker,.bouquet-illustration .front-leg,.bouquet-illustration .back-leg,.bouquet-illustration .bouquet-wrap{animation:none!important}}
+
+
+/* Bouquet is the focal point: remove destination and make the hands visibly hold it */
+.bouquet-illustration .doorway{display:none}
+.bouquet-illustration .editorial-walker .arm-shape{
+  fill:#f6c8d8;stroke:#54213f;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;
+}
+.bouquet-illustration .editorial-walker .hand-shape{
+  fill:#f6c8d8;stroke:#54213f;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round;
+}
+.bouquet-illustration .editorial-walker .finger-detail{
+  fill:none;stroke:#8b4a67;stroke-width:1.25;stroke-linecap:round;stroke-linejoin:round;
+}
+.bouquet-illustration .editorial-walker .sleeve-detail{
+  fill:none;stroke:#d94b91;stroke-width:1.35;stroke-linecap:round;
+}
+.bouquet-illustration .bouquet-wrap{transform-origin:50% 15%;animation:held-bouquet 3s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.bouquet-illustration .bouquet-wrap{animation:none!important}}
