@@ -1,1 +1,25 @@
-(function(){const stage=document.getElementById('world-stage');if(!stage)return;const mascot=document.getElementById('tiny-mascot'),reveal=document.getElementById('world-reveal'),buttons=Array.from(stage.querySelectorAll('.world-object'));const content={design:{kicker:'01 / UX + UI DESIGN',title:'Make it make sense.',body:'I think about hierarchy, clear flows, and how an interface helps someone move through a task.',tags:'USER FLOWS · INTERFACE STRUCTURE · VISUAL HIERARCHY'},build:{kicker:'02 / FRONT-END',title:'Bring the idea to life.',body:'I work across HTML, CSS, JavaScript, React, and TypeScript to turn interface ideas into working experiences.',tags:'HTML · CSS · JAVASCRIPT · REACT · TYPESCRIPT'},data:{kicker:'03 / DATA + AI',title:'Find the useful signal.',body:'I use Python, SQL, and applied AI to organize information, explore patterns, and build more informed product experiences.',tags:'PYTHON · SQL · FASTAPI · RAG · DATA ANALYSIS'},product:{kicker:'04 / PRODUCT THINKING',title:'Connect the pieces.',body:'I look at the user need, the information behind it, and the technical constraints together instead of treating them as separate problems.',tags:'PROBLEM DEFINITION · INFORMATION ARCHITECTURE · PROTOTYPING'}};function select(button){const target=button.getBoundingClientRect(),m=mascot.getBoundingClientRect(),x=target.left+target.width/2-(m.left+m.width/2),y=target.top+target.height/2-(m.top+m.height/2);mascot.style.transform='translate('+x+'px,'+y+'px)';mascot.classList.remove('is-hopping');void mascot.offsetWidth;mascot.classList.add('is-hopping');buttons.forEach(b=>{b.classList.toggle('is-active',b===button);b.setAttribute('aria-pressed',b===button?'true':'false')});const item=content[button.dataset.skill];reveal.innerHTML='<span class="reveal-kicker">'+item.kicker+'</span><strong>'+item.title+'</strong><p>'+item.body+'</p><div class="reveal-tags">'+item.tags+'</div>';reveal.classList.add('is-open');stage.classList.add('has-selection');const count=stage.parentElement.querySelector('.world-heading span:last-child');if(count)count.textContent='0'+(buttons.indexOf(button)+1)+' / 04'}buttons.forEach(button=>button.addEventListener('click',()=>select(button)));window.addEventListener('resize',()=>{mascot.style.transform='translate(0,0)'})})();
+(function(){
+ const stage=document.getElementById('world-stage');if(!stage)return;
+ const mascot=document.getElementById('tiny-mascot');
+ const buttons=Array.from(stage.querySelectorAll('.world-object'));
+ const note=document.getElementById('world-reveal');
+ let navigating=false;
+ function go(button){
+  if(navigating)return;
+  const destination=document.getElementById(button.dataset.destination);if(!destination)return;
+  navigating=true;
+  buttons.forEach(b=>b.classList.toggle('is-active',b===button));
+  const target=button.getBoundingClientRect(),m=mascot.getBoundingClientRect();
+  const x=target.left+target.width/2-(m.left+m.width/2);
+  const y=target.top+target.height/2-(m.top+m.height/2);
+  mascot.style.transform='translate('+x+'px,'+y+'px) scale(1.08)';
+  mascot.classList.remove('is-hopping');void mascot.offsetWidth;mascot.classList.add('is-hopping');
+  if(note){note.innerHTML='<span class="reveal-kicker">FOLLOW ME ↗</span><strong>On our way!</strong><p>Taking you to '+button.querySelector('.object-name').textContent.toLowerCase()+'.</p>';note.classList.add('is-open');}
+  window.setTimeout(function(){
+   destination.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'});
+   history.replaceState(null,'','#'+destination.id);
+   window.setTimeout(function(){mascot.style.transform='translate(0,0) scale(1)';mascot.classList.remove('is-hopping');if(note)note.classList.remove('is-open');navigating=false;},850);
+  },560);
+ }
+ buttons.forEach(button=>button.addEventListener('click',function(){go(button);}));
+})();
